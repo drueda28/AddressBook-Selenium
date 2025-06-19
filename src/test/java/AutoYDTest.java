@@ -29,7 +29,7 @@ class AutoYDTest {
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 		if (driver != null) {
-//			driver.quit();
+			driver.quit();
 		}
 	}
 
