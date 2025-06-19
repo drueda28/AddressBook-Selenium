@@ -42,8 +42,7 @@ class AutoYDTest {
 	}
 
 	/**
-	 * Mandatory input fields: 
-	 * An person's name or business name must be specified.
+	 * Mandatory input fields: An person's name or business name must be specified.
 	 * At least one of the following must be entered: street/mailing address, email
 	 * address, phone number or web site url.
 	 */
@@ -59,8 +58,13 @@ class AutoYDTest {
 		WebElement web = driver.findElement(By.linkText("Add New Entry"));
 		System.out.println("addNewEntry_InvalidTestCases Link: " + driver.getCurrentUrl());
 		web.click();
-		
-	}  
+		driver.findElement(By.id("addr_first_name")).sendKeys(" ");
+		driver.findElement(By.id("addr_addr_line_1")).sendKeys("Danna");
+		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+//		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+//		subtnElement
+
+	}
 
 //	@Test
 	@DisplayName("addNewEntry_Edit")
