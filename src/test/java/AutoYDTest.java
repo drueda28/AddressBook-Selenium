@@ -6,23 +6,21 @@
  * Date: June 12,2025
  */
 
-import java.nio.channels.Selector;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.zip.DataFormatException;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.FieldMapping;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
-import io.opentelemetry.sdk.metrics.internal.view.StringPredicates;
 
 class AutoYDTest {
 	static WebDriver driver;
@@ -80,18 +78,19 @@ class AutoYDTest {
 	 */
 	private void fillForm(String firstName, String lastName, String business, String addr1, String email1,
 			String phone1, String web1, Map<String, String> fieldMap) throws Exception {
-
+		Map<String, String> newMap = new HashMap<String, String>();
 		Map<String, String> map = Map.of("addr_first_name", firstName, "addr_last_name", lastName, "addr_business",
 				business, "addr_addr_line_1", addr1, "addr_email_1", email1, "addr_phone_1", phone1, "addr_web_url_1",
 				web1);
 
 		// if the other fields are not null or empty, merge it with the mandatory fields
 		if (fieldMap != null && !fieldMap.isEmpty()) {
-			map.putAll(fieldMap);
+			newMap.putAll(fieldMap);
+			newMap.putAll(map);
 		}
 
 		try {
-			for (Map.Entry<String, String> entry : map.entrySet()) {
+			for (Map.Entry<String, String> entry : newMap.entrySet()) {
 				WebElement ele = driver.findElement(By.id(entry.getKey()));
 
 				// If the input value is null, do not change anything
@@ -111,9 +110,9 @@ class AutoYDTest {
 	}
 
 	/**
-	 * This method is build for dropdown selectors to input values by id
-	 * the inputMap, in key -put selector id, value -put the test value
-	 * Note: this method do not click the save button
+	 * This method is build for drop down selectors to input values by id the
+	 * inputMap, in key -put selector id, value -put the test value Note: this
+	 * method do not click the save button
 	 * 
 	 * @param inputMap
 	 * @throws Exception
@@ -122,15 +121,15 @@ class AutoYDTest {
 		List<String> selectorIds = List.of("addr_type", "addr_phone_1_type", "addr_phone_2_type", "addr_phone_3_type");
 
 		if (inputMap == null || inputMap.isEmpty())
-			throw new DataFormatException("input map should contains value");
+			throw new IllegalArgumentException("input map should contains value");
 
 		try {
 			for (Map.Entry<String, String> entry : inputMap.entrySet()) {
 				if (entry.getValue() == null || entry.getValue().isBlank())
-					throw new DataFormatException("field value is null or empty");
+					throw new IllegalArgumentException("field value is null or empty");
 
 				if (!selectorIds.contains(entry.getKey()))
-					throw new DataFormatException("selector ID not exits");
+					throw new IllegalArgumentException("selector ID not exits");
 
 				Select mySelect = new Select(driver.findElement(By.id(entry.getKey())));
 				mySelect.selectByValue(entry.getValue());
@@ -178,7 +177,6 @@ class AutoYDTest {
 	void valid_edit() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-
 		try {
 			fillForm("Fanshawe", "", "", "1001 Fanshawe College", "", "", "", null);
 		} catch (Exception e) {
@@ -187,10 +185,10 @@ class AutoYDTest {
 		}
 	}
 
-//	@Test
+	@Test
 	@DisplayName("Edit_ClearForm")
 	@Order(51)
-	void valid_edit_clearForm() {
+	void edit_clearForm_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 		try {
@@ -201,24 +199,51 @@ class AutoYDTest {
 			return;
 		}
 	}
+	
+	@Test
+	@DisplayName("Edit_Return")
+	@Order(51)
+	void edit_Return_valid() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		driver.findElement(By.linkText("Return (Cancel)")).click();
+	}
 
 	@Test
-	@DisplayName("Valid_Edit_Selector")
-	@Order(51)
-	void valid_edit_select() {
+	@DisplayName("Edit_Select_Valid")
+	@Order(52)
+	void edit_select_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 		try {
 			Map<String, String> map = Map.of("addr_type", "Business","addr_phone_1_type","Home Fax","addr_phone_2_type","Work","addr_phone_3_type","Work Fax");
 			addSelectorValue(map);
-			fillForm("AttrType5", "", "", "2213 Fanshawe College", "", "", "", null);
+			fillForm("select2", "", "", "2213 Fanshawe College", "", "", "", Map.of("addr_phone_1","(226)3345678","addr_phone_2","+1 2264431235","addr_phone_3","+1 3345567899"));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
 		}
 	}
-
+	
 	@Test
+	@DisplayName("Edit_Phone1_Max")
+	@Order(53)
+	void edit_phone1_OnBoundryMAX() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			fillForm("phoneMax", "", "", "", "", "", "", Map.of("addr_phone_1","543281495076287492034561"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		
+	}
+
+	
+	
+//	@Test
 	@DisplayName("viewDetail")
 	@Order(100)
 	void clickFirstViewDetail() {
