@@ -8,29 +8,35 @@
 
 import java.util.HashMap;
 
-// test git
-import java.nio.channels.Selector;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.FieldMapping;
+//import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
 
 class AutoYDTest {
 	static WebDriver driver;
+	static String chromeKey = "webdriver.chrome.driver";
+	//Should be changed by each user
+	static String chromepath="C:\\Tools\\chromedriver-win64\\chromedriver.exe";
 	static final String LINK = "http:localhost/addressbook/index.php";
 
-	@BeforeAll
+	@Parameters("browser")
+//	@BeforeAll
+	@BeforeSuite
 	static void setUpBeforeClass() throws Exception {
+		System.setProperty(chromeKey, chromepath);
 		driver = new ChromeDriver();
 		driver.get(LINK);
 	}
@@ -48,6 +54,7 @@ class AutoYDTest {
 	 * 
 	 */
 	private void toAddNewEntry() {
+		driver.get(LINK);
 		driver.findElement(By.linkText("Add New Entry")).click();
 		System.out.println("addNewEntry Link: " + driver.getCurrentUrl());
 	}
@@ -58,6 +65,7 @@ class AutoYDTest {
 	 * 
 	 */
 	private void toListEntries() {
+		driver.get(LINK);
 		driver.findElement(By.linkText("List All Entries")).click();
 		System.out.println("List All Entries Link: " + driver.getCurrentUrl());
 	}
@@ -70,20 +78,20 @@ class AutoYDTest {
 	 * 
 	 * @param firstName
 	 * @param lastName
-	 * @param business
+	 * @param businessName
 	 * @param addr1
-	 * @param email1
+	 * @param email_1
 	 * @param phone1
 	 * @param web1
-	 * @param fiedlMap  - this is using for putting other not mandatory field
-	 *                  element id and values
+	 * @param fiedlMap     - this is using for putting other not mandatory field
+	 *                     element id and values
 	 * @throws Exception
 	 */
-	private void fillForm(String firstName, String lastName, String business, String addr1, String email1,
+	private void fillForm(String firstName, String lastName, String businessName, String addr1, String email_1,
 			String phone1, String web1, Map<String, String> fieldMap) throws Exception {
 		Map<String, String> newMap = new HashMap<String, String>();
 		Map<String, String> map = Map.of("addr_first_name", firstName, "addr_last_name", lastName, "addr_business",
-				business, "addr_addr_line_1", addr1, "addr_email_1", email1, "addr_phone_1", phone1, "addr_web_url_1",
+				businessName, "addr_addr_line_1", addr1, "addr_email_1", email_1, "addr_phone_1", phone1, "addr_web_url_1",
 				web1);
 
 		// if the other fields are not null or empty, merge it with the mandatory fields
@@ -109,7 +117,7 @@ class AutoYDTest {
 		System.out.println("Successfully fill into the form");
 
 		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
-		driver.findElement(By.tagName("input")).click();
+		driver.get(LINK);
 	}
 
 	/**
@@ -143,11 +151,36 @@ class AutoYDTest {
 		}
 	}
 
+	private String genString(int len) {
+		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		StringBuilder sb = new StringBuilder(len);
+
+		for (int i = 0; i < len; i++) {
+			int a = new Random().nextInt(chars.length());
+			sb.append(chars.charAt(a));
+		}
+
+		System.out.println("genString: " + sb);
+		return sb.toString();
+	}
+
+	private String gebDigits(int len) {
+		Random rd = new Random();
+		StringBuilder sb = new StringBuilder(len);
+
+		for (int i = 0; i < len; i++) {
+			sb.append(Math.abs(rd.nextInt()));
+		}
+		System.out.println("gebDigits: " + sb.toString());
+		return sb.toString();
+	}
+
 //------------- The end of tool methods --------- Test cases starts from here-----------// 
 
 	@Test
-	@Order(1)
-	@DisplayName("SmokeTest")
+//	@Order(1)
+//	@DisplayName("SmokeTest")
+//	@Parameters("browser")
 	void smokeTest_getTitle() {
 		String title = driver.getTitle();
 		System.out.println("title: " + title);
@@ -164,8 +197,8 @@ class AutoYDTest {
 	 */
 
 //	@Test 
-	@DisplayName("addNewEntry_InvalidTestCases")
-	@Order(2)
+//	@DisplayName("addNewEntry_InvalidTestCases")
+//	@Order(2)
 	void addNewEntry_InvalidTestCases() {
 		toAddNewEntry();
 		driver.findElement(By.id("addr_first_name")).sendKeys("");
@@ -175,80 +208,8 @@ class AutoYDTest {
 	}
 
 	@Test
-	@DisplayName("Edit_Valid")
-	@Order(50)
-	void valid_edit() {
-		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		try {
-			fillForm("Fanshawe", "", "", "1001 Fanshawe College", "", "", "", null);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
-		}
-	}
-
-	@Test
-	@DisplayName("Edit_ClearForm")
-	@Order(51)
-	void edit_clearForm_valid() {
-		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		try {
-			driver.findElement(By.id("reset_button")).click();
-			fillForm("Reset", "", "", "2001 Fanshawe College", "", "", "", null);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
-		}
-	}
-	
-	@Test
-	@DisplayName("Edit_Return")
-	@Order(51)
-	void edit_Return_valid() {
-		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		driver.findElement(By.linkText("Return (Cancel)")).click();
-	}
-
-	@Test
-	@DisplayName("Edit_Select_Valid")
-	@Order(52)
-	void edit_select_valid() {
-		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		try {
-			Map<String, String> map = Map.of("addr_type", "Business","addr_phone_1_type","Home Fax","addr_phone_2_type","Work","addr_phone_3_type","Work Fax");
-			addSelectorValue(map);
-			fillForm("select2", "", "", "2213 Fanshawe College", "", "", "", Map.of("addr_phone_1","(226)3345678","addr_phone_2","+1 2264431235","addr_phone_3","+1 3345567899"));
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
-		}
-	}
-	
-	@Test
-	@DisplayName("Edit_Phone1_Max")
-	@Order(53)
-	void edit_phone1_OnBoundryMAX() {
-		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		try {
-			fillForm("phoneMax", "", "", "", "", "", "", Map.of("addr_phone_1","543281495076287492034561"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-		
-	}
-
-	
-	
-//	@Test
-	@DisplayName("viewDetail")
-	@Order(100)
+//	@DisplayName("viewDetail")
+//	@Order(100)
 	void clickFirstViewDetail() {
 		toListEntries();
 
@@ -267,7 +228,140 @@ class AutoYDTest {
 			return;
 		}
 
-		driver.findElement(By.linkText("Return")).click();
-		driver.findElement(By.linkText("Return to Menu")).click();
+//		driver.findElement(By.linkText("Return")).click();
+//		driver.findElement(By.linkText("Return to Menu")).click();
+		driver.get(LINK);
+	}
+
+	@Test
+//	@DisplayName("Edit_Valid")
+//	@Order(50)
+	void valid_edit() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			fillForm("Fanshawe", "", "", "1001 Fanshawe College", "", "", "", null);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
+	}
+
+	@Test
+//	@DisplayName("Edit_ClearForm")
+//	@Order(51)
+	void edit_clearForm_valid() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			driver.findElement(By.id("reset_button")).click();
+			fillForm("Reset", "", "", "2001 Fanshawe College", "", "", "", null);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
+//		driver.get(LINK);
+	}
+
+//	@Test
+//	@DisplayName("Edit_Return")
+//	@Order(51)
+	void edit_Return_valid() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		driver.findElement(By.linkText("Return (Cancel)")).click();
+	}
+
+//	@Test
+//	@DisplayName("Edit_Select_Valid")
+//	@Order(52)
+	void edit_select_valid() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			Map<String, String> map = Map.of("addr_type", "Business", "addr_phone_1_type", "Home Fax",
+					"addr_phone_2_type", "Work", "addr_phone_3_type", "Work Fax");
+			addSelectorValue(map);
+			fillForm("select2", "", "", "2213 Fanshawe College", "", "", "", Map.of("addr_phone_1", "(226)3345678",
+					"addr_phone_2", "+1 2264431235", "addr_phone_3", "+1 3345567899"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
+//		driver.get(LINK);
+	}
+
+//	@Test
+//	@DisplayName("Edit_Phone1_Max")
+//	@Order(53)
+	void edit_phone1_OnMax() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			fillForm("phoneMax", "", "", "", "", "", "", Map.of("addr_phone_2", gebDigits(25)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+//		driver.get(LINK);
+	}
+
+	void edit_firstNameOnMax() {
+		toListEntries();
+
+//		String firstName = 
+	}
+
+	void edit_addrOnMax() {
+		toListEntries();
+
+	}
+
+	void edit_cityOnMax() {
+		toListEntries();
+
+	}
+
+	void edit_regionOnMax() {
+		toListEntries();
+	}
+
+	// 20
+	@Test
+	void edit_countryOnMax() {
+		toListEntries();
+
+		try {
+			fillForm("countryOnMax", "", "", "", "", "", "", Map.of("addr_country", gebDigits(20)));
+		} catch (Exception ex) {
+			// TODO: handle exception
+			System.err.println(ex.getMessage());
+		}
+
+	}
+
+	void edit_postCodeOnMax() {
+		toListEntries();
+
+	}
+
+	void edit_emailOnMax() {
+		toListEntries();
+	}
+
+	void edit_webUrlOnMax() {
+		toListEntries();
+	}
+
+//	@Test
+	void edit_webUrl_invalid() {
+		toListEntries();
+
+		try {
+			fillForm("", "", "WebUrl test", "", "", "", "fanshawe.ca/p=1", null);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
 	}
 }
