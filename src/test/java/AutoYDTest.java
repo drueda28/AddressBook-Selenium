@@ -8,23 +8,36 @@
 
 import java.util.HashMap;
 
+
+//import java.nio.channels.Selector;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+
 //import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.FieldMapping;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.Test;
+
+//import org.testng.annotations.Test;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
 
+import java.time.Duration;
+
+// Add webdriver parameters, RUN // DEBUG, driver.quit
 class AutoYDTest {
 	static WebDriver driver;
 	static String chromeKey = "webdriver.chrome.driver";
@@ -197,19 +210,86 @@ class AutoYDTest {
 	 */
 
 //	@Test 
-//	@DisplayName("addNewEntry_InvalidTestCases")
-//	@Order(2)
-	void addNewEntry_InvalidTestCases() {
+	@DisplayName("addNewEntry_InvalidTestCases_FillAddressLine1")
+	@Order(2)
+	void addNewEntry_InvalidTestCases_FillAddressLine1() {
 		toAddNewEntry();
 		driver.findElement(By.id("addr_first_name")).sendKeys("");
-		driver.findElement(By.id("addr_addr_line_1")).sendKeys("Danna");
+		driver.findElement(By.id("addr_addr_line_1")).sendKeys("456 Street 3");
 		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
-		driver.findElement(By.tagName("input")).click();
+		
+		String output = driver.findElement(By.xpath("//p")).getText();
+		Assertions.assertEquals("An person's name or business name must be specified.", output);
+		//driver.findElement(By.tagName("input")).click();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
 	}
-
+	
+	@Test 
+	@DisplayName("addNewEntry_InvalidTestCases_FillFirstName")
+	@Order(3)
+	void addNewEntry_InvalidTestCases_FillFirstName() {
+		toAddNewEntry();
+		driver.findElement(By.id("addr_first_name")).sendKeys("Mark");
+		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+		
+		String output = driver.findElement(By.xpath("//p")).getText();
+		Assertions.assertEquals("At least one of the following must be entered: street/mailing address, email address, phone number or web site url.", output);
+	}
+	
 	@Test
 //	@DisplayName("viewDetail")
 //	@Order(100)
+//	@Test
+	@DisplayName("Edit_Valid")
+	@Order(50)
+	void valid_edit() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			fillForm("Fanshawe", "", "", "1001 Fanshawe College", "", "", "", null);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
+	}
+
+//	@Test
+	@DisplayName("Edit_ClearForm")
+	@Order(51)
+	void edit_clearForm_valid() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			driver.findElement(By.id("reset_button")).click();
+			fillForm("Reset", "", "", "2001 Fanshawe College", "", "", "", null);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
+	}
+
+	
+//	@Test
+	@DisplayName("Edit_Phone1_Max")
+	@Order(53)
+	void edit_phone1_OnBoundryMAX() {
+		toListEntries();
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		try {
+			fillForm("phoneMax", "", "", "", "", "", "", Map.of("addr_phone_1","543281495076287492034561"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		
+	}
+
+	
+	
+//	@Test
+	@DisplayName("viewDetail")
+	@Order(100)
 	void clickFirstViewDetail() {
 		toListEntries();
 
@@ -231,36 +311,6 @@ class AutoYDTest {
 //		driver.findElement(By.linkText("Return")).click();
 //		driver.findElement(By.linkText("Return to Menu")).click();
 		driver.get(LINK);
-	}
-
-	@Test
-//	@DisplayName("Edit_Valid")
-//	@Order(50)
-	void valid_edit() {
-		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		try {
-			fillForm("Fanshawe", "", "", "1001 Fanshawe College", "", "", "", null);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
-		}
-	}
-
-	@Test
-//	@DisplayName("Edit_ClearForm")
-//	@Order(51)
-	void edit_clearForm_valid() {
-		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		try {
-			driver.findElement(By.id("reset_button")).click();
-			fillForm("Reset", "", "", "2001 Fanshawe College", "", "", "", null);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
-		}
-//		driver.get(LINK);
 	}
 
 //	@Test
