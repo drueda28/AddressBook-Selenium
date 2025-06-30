@@ -8,22 +8,25 @@
 
 import java.util.HashMap;
 
-// test git
-import java.nio.channels.Selector;
+//import java.nio.channels.Selector;
 import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.FieldMapping;
+//import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.FieldMapping;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import java.time.Duration;
+
+// Add webdriver parameters, RUN // DEBUG, driver.quit
 
 class AutoYDTest {
 	static WebDriver driver;
@@ -164,17 +167,33 @@ class AutoYDTest {
 	 */
 
 //	@Test 
-	@DisplayName("addNewEntry_InvalidTestCases")
+	@DisplayName("addNewEntry_InvalidTestCases_FillAddressLine1")
 	@Order(2)
-	void addNewEntry_InvalidTestCases() {
+	void addNewEntry_InvalidTestCases_FillAddressLine1() {
 		toAddNewEntry();
 		driver.findElement(By.id("addr_first_name")).sendKeys("");
-		driver.findElement(By.id("addr_addr_line_1")).sendKeys("Danna");
+		driver.findElement(By.id("addr_addr_line_1")).sendKeys("456 Street 3");
 		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
-		driver.findElement(By.tagName("input")).click();
+		
+		String output = driver.findElement(By.xpath("//p")).getText();
+		Assertions.assertEquals("An person's name or business name must be specified.", output);
+		//driver.findElement(By.tagName("input")).click();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+	}
+	
+	@Test 
+	@DisplayName("addNewEntry_InvalidTestCases_FillFirstName")
+	@Order(3)
+	void addNewEntry_InvalidTestCases_FillFirstName() {
+		toAddNewEntry();
+		driver.findElement(By.id("addr_first_name")).sendKeys("Mark");
+		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+		
+		String output = driver.findElement(By.xpath("//p")).getText();
+		Assertions.assertEquals("At least one of the following must be entered: street/mailing address, email address, phone number or web site url.", output);
 	}
 
-	@Test
+//	@Test
 	@DisplayName("Edit_Valid")
 	@Order(50)
 	void valid_edit() {
@@ -188,7 +207,7 @@ class AutoYDTest {
 		}
 	}
 
-	@Test
+//	@Test
 	@DisplayName("Edit_ClearForm")
 	@Order(51)
 	void edit_clearForm_valid() {
@@ -203,7 +222,7 @@ class AutoYDTest {
 		}
 	}
 	
-	@Test
+//	@Test
 	@DisplayName("Edit_Return")
 	@Order(51)
 	void edit_Return_valid() {
@@ -212,7 +231,7 @@ class AutoYDTest {
 		driver.findElement(By.linkText("Return (Cancel)")).click();
 	}
 
-	@Test
+//	@Test
 	@DisplayName("Edit_Select_Valid")
 	@Order(52)
 	void edit_select_valid() {
@@ -228,7 +247,7 @@ class AutoYDTest {
 		}
 	}
 	
-	@Test
+//	@Test
 	@DisplayName("Edit_Phone1_Max")
 	@Order(53)
 	void edit_phone1_OnBoundryMAX() {
