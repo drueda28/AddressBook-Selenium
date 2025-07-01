@@ -2,13 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AotuoYDTestSuite(failed)">
-    <parameter name="browser" value="CHROME"/>
+    <parameter name="addr1" value="1011 Fanshawe College"/>
+    <parameter name="businessname" value="Fansahwe College London Ontario"/>
+    <parameter name="title" value="Address Book"/>
     <classes>
       <class name="AutoYDTest">
         <methods>
-          <include name="valid_edit"/>
-          <include name="edit_clearForm_valid"/>
           <include name="setUpBeforeClass"/>
+          <include name="edit_fields_OnMax"/>
         </methods>
       </class> <!-- AutoYDTest -->
     </classes>

@@ -2,7 +2,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<test thread-count="5" name="AotuoYDTestSuite">
-		<parameter name="browser" value="CHROME"></parameter>
+		<parameter name="title" value="Address Book"></parameter>
+		<parameter name="businessname" value="Fansahwe College London Ontario"/>
+		<parameter name="addr1" value="1011 Fanshawe College"/>
 		<classes>
 			<class name="AutoYDTest" />
 		</classes>
