@@ -8,70 +8,48 @@
 
 import java.util.HashMap;
 
-//import java.nio.channels.Selector;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 
-//import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
-//import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.helpers.FieldMapping;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertThrows;
 
-// Add screenshot
-class AutoYDTest extends BasicClass {
+@Listeners(IListener.class)
+public class AutoYDTest extends BaseClass {
 
 	@BeforeMethod
-	static void setUpBeforeClass() throws Exception {
-		Launch();
-		if (driver == null) {
-			throw new Exception();
-		}
+	@Parameters({ "baseURL", "driverFolder", "screenShotFolder" })
+	public void Initialization(String baseURL, String driverFolder, String screenShotFolder) {
+		Launch(baseURL, driverFolder, screenShotFolder);
 	}
 
 	@AfterMethod
-	static void tearDownAfterClass() throws Exception {
-		if (driver != null) {
-			driver.close();
-		}
+	public void teardown() {
+		driver.quit();
 	}
 
-	/**
-	 * This method is directing the web page from index page to addNewEntry web page
-	 * 
-	 */
+    //This method is directing the web page from index page to addNewEntry web page
 	private void toAddNewEntry() {
 		driver.get(LINK);
 		driver.findElement(By.linkText("Add New Entry")).click();
 		System.out.println("addNewEntry Link: " + driver.getCurrentUrl());
 	}
 
-	/**
-	 * This method is directing the web page from index page to List All Entries web
-	 * page
-	 * 
-	 */
+	//This method is directing the web page from index page to List All Entries web page
 	private void toListEntries() {
 		driver.get(LINK);
 		driver.findElement(By.linkText("List All Entries")).click();
@@ -79,7 +57,7 @@ class AutoYDTest extends BasicClass {
 	}
 
 	/*
-	 * Area below are some tool methods,DO NOT REMOVE IT!
+	 * Area below are some tool methods
 	 */
 	/**
 	 * Fill into the mandatory fields with element id and input value
@@ -125,8 +103,7 @@ class AutoYDTest extends BasicClass {
 		}
 		System.out.println("Successfully fill into the form");
 
-		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
-		driver.get(LINK);
+		driver.findElement(By.xpath("//input[@name='submit_button']")).click();
 	}
 
 	/**
@@ -168,21 +145,8 @@ class AutoYDTest extends BasicClass {
 			int a = new Random().nextInt(chars.length());
 			sb.append(chars.charAt(a));
 		}
-
 		return sb.toString();
 	}
-
-	private String gebDigits(int len) {
-		Random rd = new Random();
-		StringBuilder sb = new StringBuilder(len);
-
-		for (int i = 0; i < len; i++) {
-			sb.append(Math.abs(rd.nextInt()));
-		}
-//		System.out.println("genDigits: " + sb.toString());
-		return sb.toString();
-	}
-
 //------------- The end of tool methods --------- Test cases starts from here-----------// 
 
 	@Test(priority = 1)
@@ -194,7 +158,6 @@ class AutoYDTest extends BasicClass {
 	@Test(priority = 2)
 	@Parameters("title")
 	void smokeTest_parameter(String title) {
-		driver.get(LINK);
 		assertEquals(driver.getTitle(), title);
 	}
 
@@ -203,33 +166,37 @@ class AutoYDTest extends BasicClass {
 	 * name must be specified. At least one of the following must be entered:
 	 * street/mailing address, email address, phone number or web site url.
 	 */
-
 	/**
 	 * Please write all of your test cases below in order
 	 */
 
-	@Test(priority = 3)
-//	@DisplayName("addNewEntry_InvalidTestCases_FillAddressLine1")
-//	@Order(2)
-	void addNewEntry_InvalidTestCases_FillAddressLine1() {
+	@Test(priority = 3, dataProvider = "addNewEntry_Invalid_FillOnlyAddress_EmptyNames")
+	void addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames(String key, String value) {
 		toAddNewEntry();
-		driver.findElement(By.id("addr_first_name")).sendKeys("");
-		driver.findElement(By.id("addr_addr_line_1")).sendKeys("456 Street 3");
-		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+		System.out.println("addNewEntry_InvalidTestCases id: " + key + " value:" + value);
+		try {
+			WebElement webElement = driver.findElement(By.xpath("//input[@name='" + key + "']"));
+			webElement.sendKeys(value);
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return;
+		}
 
 		String output = driver.findElement(By.xpath("//p")).getText();
 		Assertions.assertEquals("An person's name or business name must be specified.", output);
-		// driver.findElement(By.tagName("input")).click();
-		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+	}
+
+	@DataProvider(name = "addNewEntry_Invalid_FillOnlyAddress_EmptyNames")
+	Object[][] addNewEntry_Invalid_FillOnlyAddress_EmptyNames() {
+		return new Object[][] { new Object[] { "addr_addr_line_1", "456 Street 3" } };
 	}
 
 	@Test(priority = 4)
-	@DisplayName("addNewEntry_InvalidTestCases_FillFirstName")
-	@Order(3)
-	void addNewEntry_InvalidTestCases_FillFirstName() {
+	void addNewEntry_InvalidTestCases_EmptyAddress() {
 		toAddNewEntry();
-		driver.findElement(By.id("addr_first_name")).sendKeys("Mark");
-		driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+		driver.findElement(By.name("addr_first_name")).sendKeys("Mark");
+		driver.findElement(By.xpath("//input[@name='submit_button']")).click();
 
 		String output = driver.findElement(By.xpath("//p")).getText();
 		Assertions.assertEquals(
@@ -237,24 +204,22 @@ class AutoYDTest extends BasicClass {
 				output);
 	}
 
-	@Test
+	@Test(priority = 10)
 	@Parameters("addr1")
-	void valid_edit(String addr1) {
+	void edit_valid(String addr1) {
 		toListEntries();
-		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 		try {
-			System.out.println("Addr1: " + addr1);
-			driver.findElement(By.id("addr_business")).sendKeys(addr1);
+			driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+			driver.findElement(By.xpath("//input[@name='addr_business']")).sendKeys(addr1);
 			driver.findElement(By.xpath("//input[@id='submit_button']")).click();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
 		}
-
 		driver.get(LINK);
 	}
 
-	@Test
+	@Test(priority = 11)
 	void edit_clearForm_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
@@ -267,7 +232,7 @@ class AutoYDTest extends BasicClass {
 		}
 	}
 
-	@Test
+	@Test(priority = 12)
 	void clickFirstViewDetail() {
 		toListEntries();
 
@@ -288,15 +253,14 @@ class AutoYDTest extends BasicClass {
 		driver.get(LINK);
 	}
 
-	@Test
+	@Test(priority = 13)
 	void edit_Return_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 		driver.findElement(By.linkText("Return (Cancel)")).click();
-		driver.get(LINK);
 	}
 
-	@Test
+	@Test(priority = 14)
 	void edit_select_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
@@ -313,7 +277,7 @@ class AutoYDTest extends BasicClass {
 		driver.get(LINK);
 	}
 
-	@Test(priority = 1, dataProvider = "edit_fields_OnMax")
+	@Test(priority = 15, dataProvider = "edit_fields_OnMax")
 	void edit_fields_OnMax(String key, String value) {
 		System.out.println("Key: " + key + " Value: " + value);
 		toListEntries();
@@ -338,11 +302,11 @@ class AutoYDTest extends BasicClass {
 				{ "addr_business", genString(75) }, { "addr_addr_line_1", genString(75) },
 				{ "addr_city", genString(50) }, { "addr_region", genString(50) }, { "addr_country", genString(50) },
 				{ "addr_post_code", genString(20) }, { "addr_email_1", genString(124) + "@com" },
-				{ "addr_phone_1", gebDigits(25) }, { "addr_web_url_1", "http://" + genString(121) } };
+				{ "addr_phone_1", genString(25) }, { "addr_web_url_1", "http://" + genString(121) } };
 	}
 
-	@Test
-	void edit_webUrl_invalid() {
+	@Test(priority = 16)
+	void edit_invalid() {
 		toListEntries();
 
 		try {
@@ -350,5 +314,16 @@ class AutoYDTest extends BasicClass {
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
+
+		assertEquals("", "");
+	}
+
+	@DataProvider(name = "edit_invalid")
+	Object[][] edit_fields_Invalid() {
+		return new Object[][] { new Object[] { "addr_first_name", genString(50) }, { "addr_last_name", genString(50) },
+				{ "addr_business", genString(75) }, { "addr_addr_line_1", genString(75) },
+				{ "addr_city", genString(50) }, { "addr_region", genString(50) }, { "addr_country", genString(50) },
+				{ "addr_post_code", genString(20) }, { "addr_email_1", genString(124) + "@com" },
+				{ "addr_phone_1", genString(25) }, { "addr_web_url_1", "http://" + genString(121) } };
 	}
 }
