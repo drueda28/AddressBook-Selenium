@@ -1,21 +1,372 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+<testng-results ignored="0" total="21" passed="21" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-01T13:06:59 EDT" name="Suite" finished-at="2025-07-01T13:07:08 EDT" duration-ms="8989">
+  <suite started-at="2025-07-02T23:41:24 EDT" name="Suite" finished-at="2025-07-02T23:42:15 EDT" duration-ms="50993">
     <groups>
     </groups>
-    <test started-at="2025-07-01T13:06:59 EDT" name="AotuoYDTestSuite" finished-at="2025-07-01T13:07:08 EDT" duration-ms="8989">
+    <test started-at="2025-07-02T23:41:24 EDT" name="AotuoYDTestSuite" finished-at="2025-07-02T23:42:15 EDT" duration-ms="50993">
       <class name="AutoYDTest">
-        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:06:58 EDT" name="setUpBeforeClass" finished-at="2025-07-01T13:06:59 EDT" duration-ms="1504" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:24 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:25 EDT" duration-ms="1647" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method signature="smokeTest_getTitle()[pri:0, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:06:59 EDT" name="smokeTest_getTitle" finished-at="2025-07-01T13:06:59 EDT" duration-ms="12" status="PASS">
+        <test-method signature="clickFirstViewDetail()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:25 EDT" name="clickFirstViewDetail" finished-at="2025-07-02T23:41:26 EDT" duration-ms="681" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickFirstViewDetail -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:26 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:26 EDT" duration-ms="274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:26 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:27 EDT" duration-ms="907" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_Return_valid()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:27 EDT" name="edit_Return_valid" finished-at="2025-07-02T23:41:28 EDT" duration-ms="1007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_Return_valid -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:28 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:28 EDT" duration-ms="228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:28 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:30 EDT" duration-ms="1264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_clearForm_valid()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:30 EDT" name="edit_clearForm_valid" finished-at="2025-07-02T23:41:31 EDT" duration-ms="1300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_clearForm_valid -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:31 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:31 EDT" duration-ms="142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:31 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:32 EDT" duration-ms="1007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_select_valid()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:32 EDT" name="edit_select_valid" finished-at="2025-07-02T23:41:35 EDT" duration-ms="2787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_select_valid -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:35 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:35 EDT" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:35 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:36 EDT" duration-ms="851" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_webUrl_invalid()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:36 EDT" name="edit_webUrl_invalid" finished-at="2025-07-02T23:41:36 EDT" duration-ms="429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_webUrl_invalid -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:36 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:36 EDT" duration-ms="128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:36 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:37 EDT" duration-ms="960" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="valid_edit(java.lang.String)[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:37 EDT" name="valid_edit" finished-at="2025-07-02T23:41:38 EDT" duration-ms="997" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1011 Fanshawe College]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- valid_edit -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:38 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:39 EDT" duration-ms="169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:39 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:40 EDT" duration-ms="1121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:40 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:41 EDT" duration-ms="972" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_first_name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[aGxBdUA53CD1d0q1QssyPof8HKlJjbYOFWqvP3gtYz1shrXvD4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:41 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:41 EDT" duration-ms="260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:41 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:42 EDT" duration-ms="1163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:42 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:43 EDT" duration-ms="1051" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_last_name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BagyusrjnI8nNLpTEQvU43LTqQe57RqT3lIoHIwAC7uNgMOEAs]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:43 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:43 EDT" duration-ms="186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:43 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:44 EDT" duration-ms="987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:44 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:46 EDT" duration-ms="1330" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_business]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SMVr4jrzpezFVYhjRN1MwSpXltb6dznrd4sxkn3KkVHrejcXtc7lDnMpcgnEPV5ZyABgYWgwxEj]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:46 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:46 EDT" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:46 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:47 EDT" duration-ms="1109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:47 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:48 EDT" duration-ms="933" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_addr_line_1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MuK5QKGzV2yGfJlWx45DcdsrhMuomRXM5nzj7ZLDLDIPa8KGTRSGVulrGBbxitxp8Oz2rH1wsk6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:48 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:48 EDT" duration-ms="174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:48 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:49 EDT" duration-ms="1321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:49 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:51 EDT" duration-ms="1643" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_city]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zV79UjoDXRjtFijaxK5RWFSIZVdOxTWO8pGT5gwJyBxmsPYN6N]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:51 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:51 EDT" duration-ms="257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:51 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:53 EDT" duration-ms="1250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:53 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:54 EDT" duration-ms="989" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_region]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0PNQdvd18hBP79bXuPFrHYLM0tT9ljol99eukDJFmcsRvDqRrm]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:54 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:54 EDT" duration-ms="156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:54 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:55 EDT" duration-ms="1302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:55 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:56 EDT" duration-ms="1349" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_country]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[tpk1oeAO0teFAU9ClNAeqQJDJ1pjjsHSu74KxX6TTWT70pRVIk]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:56 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:57 EDT" duration-ms="158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:57 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:41:58 EDT" duration-ms="1096" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:58 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:41:59 EDT" duration-ms="995" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_post_code]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mAN5Hy9rtYaErWn6MaU4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:59 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:41:59 EDT" duration-ms="211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:41:59 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:42:00 EDT" duration-ms="832" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:00 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:42:01 EDT" duration-ms="1538" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_email_1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1BAkbtnidnvH6apCPOurr1X7PvIATssFpJlwT6bJ3qIMp3kEP914peJAHWCkK390qP7sKWpyWBCEX87VrBrK7C7EtRoPyU28dpm8MMPMjnfL9gaiXE6f03l7GuXD@com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:01 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:42:01 EDT" duration-ms="129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:01 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:42:02 EDT" duration-ms="948" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:02 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:42:03 EDT" duration-ms="865" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_phone_1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1718038399175569582914443082711455787389150303910520525496241309355373579601741159946138274242381418249580411734849297132218398031443573517753771001643344692214253818715995824245057315272100836890154269766389372761528362219946235400112852519]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:03 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:42:03 EDT" duration-ms="129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:03 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:42:04 EDT" duration-ms="939" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:04 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-02T23:42:06 EDT" duration-ms="2130" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[addr_web_url_1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://B1pXpgFk9WmD6npfGO2Xq22BhjKpzO1Ul6L2w7BluyXGFxnApmCloCgJsximg0thcsGQmhLzkl65tWMmQYajwwdLEvifi0dG0GY2eBsAbBn8kkQ6Nve32Fn4x]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_fields_OnMax -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:06 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:42:07 EDT" duration-ms="186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:07 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:42:08 EDT" duration-ms="1010" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="smokeTest_getTitle()[pri:1, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:08 EDT" name="smokeTest_getTitle" finished-at="2025-07-02T23:42:08 EDT" duration-ms="32" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- smokeTest_getTitle -->
-        <test-method signature="smokeTest_parameter(java.lang.String)[pri:0, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:06:59 EDT" name="smokeTest_parameter" finished-at="2025-07-01T13:06:59 EDT" duration-ms="31" status="PASS">
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:08 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:42:08 EDT" duration-ms="124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:08 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:42:09 EDT" duration-ms="1172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="smokeTest_parameter(java.lang.String)[pri:2, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:09 EDT" name="smokeTest_parameter" finished-at="2025-07-02T23:42:09 EDT" duration-ms="236" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,182 +377,34 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- smokeTest_parameter -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:06:59 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:00 EDT" duration-ms="922" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_first_name]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[H9fWYDwGeVaDw4cjr6jaV1ofmTPYBLjmEvidGHizagNbAjsOXz]]>
-              </value>
-            </param>
-          </params>
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:09 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:42:09 EDT" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:00 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:01 EDT" duration-ms="953" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_last_name]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[UtJNZPUUTSWICK7NDHgDiQ7d5ZBa5wYJ1naPgA5vEKVcmSfppD]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:09 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:42:10 EDT" duration-ms="1033" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:01 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:02 EDT" duration-ms="702" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_business]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[z6Ug7VBYstYlzA4xnKrkOlpRsboMORZ3gsmuAc6KuKns1lHSQiNl0uscejvEosT1SzTKiMsJcxW]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="addNewEntry_InvalidTestCases_FillAddressLine1()[pri:3, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:10 EDT" name="addNewEntry_InvalidTestCases_FillAddressLine1" finished-at="2025-07-02T23:42:12 EDT" duration-ms="1437" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:02 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:02 EDT" duration-ms="289" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_addr_line_1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[gHlQZjh7TbK2lMT7MbIwcJjXEOEeTVCf34EyfzTMp02B33zXIe8Qa5Lr3Q9f0wXx68JsCCYDUIL]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- addNewEntry_InvalidTestCases_FillAddressLine1 -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:12 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:42:12 EDT" duration-ms="184" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:02 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:03 EDT" duration-ms="788" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_city]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[X2wORglVpTTABAKtxiUHpgyw2IOZBn3CDMmA9VwtkwziVULUdV]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- tearDownAfterClass -->
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:12 EDT" name="setUpBeforeClass" finished-at="2025-07-02T23:42:13 EDT" duration-ms="1019" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:03 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:04 EDT" duration-ms="733" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_region]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[qUgUfHeeLApcKWXrSQIm8D1wY7Ms04fKNSGqi8mm12XLsof1F6]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="addNewEntry_InvalidTestCases_FillFirstName()[pri:4, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:13 EDT" name="addNewEntry_InvalidTestCases_FillFirstName" finished-at="2025-07-02T23:42:14 EDT" duration-ms="1327" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:04 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:04 EDT" duration-ms="704" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_country]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[fyQLRT9IlC3i9QXPUfah1EdV8uQZ44iy7mTht1GAgzcQDOuLix]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- addNewEntry_InvalidTestCases_FillFirstName -->
+        <test-method is-config="true" signature="tearDownAfterClass()[pri:0, instance:AutoYDTest@4e50c791]" started-at="2025-07-02T23:42:14 EDT" name="tearDownAfterClass" finished-at="2025-07-02T23:42:15 EDT" duration-ms="192" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:04 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:05 EDT" duration-ms="714" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_post_code]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[BpKefSTdrzYcOXIG4jDs]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:05 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:06 EDT" duration-ms="1126" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_email_1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[XSMFyZm757GJEjqzKlzGMzbpngHib6aEFrh9rFHZAb5sAZxDeH70xuqXWOym5OcWv90eoG9BtaQgpNGR6adOZmj6BC6pwDrbluBKrIY1Hd2YDnrxiJnXpB6XsE5c@com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:06 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:07 EDT" duration-ms="966" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_phone_1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Xrr9jMo9CTWJYeXpvRjrkHdLa]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
-        <test-method signature="edit_fields_OnMax(java.lang.String,java.lang.String)[pri:1, instance:AutoYDTest@3c0be339]" started-at="2025-07-01T13:07:07 EDT" name="edit_fields_OnMax" data-provider="edit_fields_OnMax" finished-at="2025-07-01T13:07:08 EDT" duration-ms="983" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[addr_web_url_1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://QKi2HeXANtyQbF1wNXWzKMR4cGmRiq3kFFzedocSuqMI96ePyf2m5NFIDOzo6tbWJ9Wfnm2qWClJLS4ewkEtpchG87KOOnq5Yds41FXFMp8tFvoYw1R2r2pzD]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- edit_fields_OnMax -->
+        </test-method> <!-- tearDownAfterClass -->
       </class> <!-- AutoYDTest -->
     </test> <!-- AotuoYDTestSuite -->
   </suite> <!-- Suite -->

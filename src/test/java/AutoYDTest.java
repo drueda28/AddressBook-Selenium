@@ -30,6 +30,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -37,29 +39,21 @@ import org.testng.annotations.Parameters;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertThrows;
 
-import java.time.Duration;
+// Add screenshot
+class AutoYDTest extends BasicClass {
 
-// Add webdriver parameters, RUN // DEBUG, driver.quit
-class AutoYDTest {
-	static WebDriver driver;
-	static String chromeKey = "webdriver.chrome.driver";
-	// Should be changed by each user
-	static String chromepath = "C:\\Tools\\chromedriver-win64\\chromedriver.exe";
-	static final String LINK = "http:localhost/addressbook/index.php";
-
-	@BeforeSuite
+	@BeforeMethod
 	static void setUpBeforeClass() throws Exception {
-		System.setProperty(chromeKey, chromepath);
-		driver = new ChromeDriver();
-		driver.get(LINK);
+		Launch();
+		if (driver == null) {
+			throw new Exception();
+		}
 	}
 
-	@AfterAll
+	@AfterMethod
 	static void tearDownAfterClass() throws Exception {
 		if (driver != null) {
-			// should not be in the state of comment after all works were done
-//			driver.quit();
-//			driver.close();
+			driver.close();
 		}
 	}
 
@@ -175,7 +169,6 @@ class AutoYDTest {
 			sb.append(chars.charAt(a));
 		}
 
-		System.out.println("genString: " + sb);
 		return sb.toString();
 	}
 
@@ -186,19 +179,19 @@ class AutoYDTest {
 		for (int i = 0; i < len; i++) {
 			sb.append(Math.abs(rd.nextInt()));
 		}
-		System.out.println("genDigits: " + sb.toString());
+//		System.out.println("genDigits: " + sb.toString());
 		return sb.toString();
 	}
 
 //------------- The end of tool methods --------- Test cases starts from here-----------// 
 
-	@Test
+	@Test(priority = 1)
 	void smokeTest_getTitle() {
 		String title = driver.getTitle();
 		System.out.println("title: " + title);
 	}
 
-	@Test
+	@Test(priority = 2)
 	@Parameters("title")
 	void smokeTest_parameter(String title) {
 		driver.get(LINK);
@@ -215,9 +208,9 @@ class AutoYDTest {
 	 * Please write all of your test cases below in order
 	 */
 
-//	@Test 
-	@DisplayName("addNewEntry_InvalidTestCases_FillAddressLine1")
-	@Order(2)
+	@Test(priority = 3)
+//	@DisplayName("addNewEntry_InvalidTestCases_FillAddressLine1")
+//	@Order(2)
 	void addNewEntry_InvalidTestCases_FillAddressLine1() {
 		toAddNewEntry();
 		driver.findElement(By.id("addr_first_name")).sendKeys("");
@@ -230,7 +223,7 @@ class AutoYDTest {
 		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
 	}
 
-//	@Test
+	@Test(priority = 4)
 	@DisplayName("addNewEntry_InvalidTestCases_FillFirstName")
 	@Order(3)
 	void addNewEntry_InvalidTestCases_FillFirstName() {
@@ -244,8 +237,8 @@ class AutoYDTest {
 				output);
 	}
 
-//	@Test
-//	@Parameters("addr1")
+	@Test
+	@Parameters("addr1")
 	void valid_edit(String addr1) {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
@@ -261,7 +254,7 @@ class AutoYDTest {
 		driver.get(LINK);
 	}
 
-//	@Test
+	@Test
 	void edit_clearForm_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
@@ -274,21 +267,7 @@ class AutoYDTest {
 		}
 	}
 
-//	@Test
-//	void edit_phone1_OnMAX() {
-//		toListEntries();
-//		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-//		try {
-//			fillForm("phoneMax", "", "", "", "", "", "", Map.of("addr_phone_1", "543281495076287492034561"));
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			System.err.println(e.getMessage());
-//		}
-
-//	}
-
-//	@Test
+	@Test
 	void clickFirstViewDetail() {
 		toListEntries();
 
@@ -309,7 +288,7 @@ class AutoYDTest {
 		driver.get(LINK);
 	}
 
-//	@Test
+	@Test
 	void edit_Return_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
@@ -317,7 +296,7 @@ class AutoYDTest {
 		driver.get(LINK);
 	}
 
-//	@Test
+	@Test
 	void edit_select_valid() {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
@@ -359,7 +338,7 @@ class AutoYDTest {
 				{ "addr_business", genString(75) }, { "addr_addr_line_1", genString(75) },
 				{ "addr_city", genString(50) }, { "addr_region", genString(50) }, { "addr_country", genString(50) },
 				{ "addr_post_code", genString(20) }, { "addr_email_1", genString(124) + "@com" },
-				{ "addr_phone_1", genString(25) }, { "addr_web_url_1", "http://" + genString(121) } };
+				{ "addr_phone_1", gebDigits(25) }, { "addr_web_url_1", "http://" + genString(121) } };
 	}
 
 	@Test

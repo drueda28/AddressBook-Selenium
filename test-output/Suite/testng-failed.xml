@@ -8,7 +8,18 @@
     <classes>
       <class name="AutoYDTest">
         <methods>
+          <include name="clickFirstViewDetail"/>
+          <include name="smokeTest_getTitle"/>
+          <include name="smokeTest_parameter"/>
+          <include name="tearDownAfterClass"/>
+          <include name="edit_Return_valid"/>
+          <include name="valid_edit"/>
           <include name="setUpBeforeClass"/>
+          <include name="edit_clearForm_valid"/>
+          <include name="edit_select_valid"/>
+          <include name="addNewEntry_InvalidTestCases_FillFirstName"/>
+          <include name="edit_webUrl_invalid"/>
+          <include name="addNewEntry_InvalidTestCases_FillAddressLine1"/>
           <include name="edit_fields_OnMax"/>
         </methods>
       </class> <!-- AutoYDTest -->
