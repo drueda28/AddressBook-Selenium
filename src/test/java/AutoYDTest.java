@@ -14,8 +14,6 @@ import java.util.Random;
 
 import org.junit.jupiter.api.Assertions;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -27,6 +25,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 @Listeners(IListener.class)
 public class AutoYDTest extends BaseClass {
@@ -42,14 +41,15 @@ public class AutoYDTest extends BaseClass {
 		driver.quit();
 	}
 
-    //This method is directing the web page from index page to addNewEntry web page
+	// This method is directing the web page from index page to addNewEntry web page
 	private void toAddNewEntry() {
 		driver.get(LINK);
 		driver.findElement(By.linkText("Add New Entry")).click();
 		System.out.println("addNewEntry Link: " + driver.getCurrentUrl());
 	}
 
-	//This method is directing the web page from index page to List All Entries web page
+	// This method is directing the web page from index page to List All Entries web
+	// page
 	private void toListEntries() {
 		driver.get(LINK);
 		driver.findElement(By.linkText("List All Entries")).click();
@@ -89,7 +89,8 @@ public class AutoYDTest extends BaseClass {
 
 		try {
 			for (Map.Entry<String, String> entry : newMap.entrySet()) {
-				WebElement ele = driver.findElement(By.id(entry.getKey()));
+				//entry.getKey()
+				WebElement ele = driver.findElement(By.xpath("//"));
 
 				// If the input value is null, do not change anything
 				if (entry.getValue() != null) {
@@ -211,11 +212,13 @@ public class AutoYDTest extends BaseClass {
 		try {
 			driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 			driver.findElement(By.xpath("//input[@name='addr_business']")).sendKeys(addr1);
-			driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
 		}
+		String message = driver.findElement(By.tagName("h2")).getText();
+		assertEquals(SUCCESS_MESSAGE, message);
 		driver.get(LINK);
 	}
 
@@ -230,10 +233,13 @@ public class AutoYDTest extends BaseClass {
 			e.printStackTrace();
 			return;
 		}
+
+		String message = driver.findElement(By.tagName("h2")).getText();
+		assertEquals(SUCCESS_MESSAGE, message);
 	}
 
 	@Test(priority = 12)
-	void clickFirstViewDetail() {
+	void view_valid() {
 		toListEntries();
 
 		try {
@@ -250,14 +256,19 @@ public class AutoYDTest extends BaseClass {
 			System.err.println("Error while clicking 'View Details': " + e.getMessage());
 			return;
 		}
-		driver.get(LINK);
+		
+		String page = driver.findElement(By.tagName("h2")).getText();
+		assertEquals("Address Book Entry Details", page);
 	}
 
 	@Test(priority = 13)
-	void edit_Return_valid() {
+	@Parameters("title")
+	void edit_Return_valid(String title) {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 		driver.findElement(By.linkText("Return (Cancel)")).click();
+
+		assertEquals(title, driver.getTitle());
 	}
 
 	@Test(priority = 14)
@@ -274,7 +285,9 @@ public class AutoYDTest extends BaseClass {
 			e.printStackTrace();
 			return;
 		}
-		driver.get(LINK);
+
+		String message = driver.findElement(By.tagName("h2")).getText();
+		assertEquals(SUCCESS_MESSAGE, message);
 	}
 
 	@Test(priority = 15, dataProvider = "edit_fields_OnMax")
@@ -293,7 +306,8 @@ public class AutoYDTest extends BaseClass {
 			return;
 		}
 
-		driver.get(LINK);
+		String message = driver.findElement(By.tagName("h2")).getText();
+		assertEquals(SUCCESS_MESSAGE, message);
 	}
 
 	@DataProvider(name = "edit_fields_OnMax")
@@ -315,7 +329,9 @@ public class AutoYDTest extends BaseClass {
 			System.err.println(e.getMessage());
 		}
 
-		assertEquals("", "");
+		String message = driver.findElement(By.tagName("h2")).getText();
+
+		assertNotEquals(SUCCESS_MESSAGE, message);
 	}
 
 	@DataProvider(name = "edit_invalid")

@@ -2,25 +2,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AotuoYDTestSuite(failed)">
+    <parameter name="screenShotFolder" value="Screenshots"/>
+    <parameter name="baseURL" value="http:localhost/addressbook/index.php"/>
+    <parameter name="driverFolder" value="\\Driver\\chromedriver.exe"/>
     <parameter name="addr1" value="1011 Fanshawe College"/>
     <parameter name="businessname" value="Fansahwe College London Ontario"/>
     <parameter name="title" value="Address Book"/>
     <classes>
       <class name="AutoYDTest">
         <methods>
-          <include name="clickFirstViewDetail"/>
-          <include name="smokeTest_getTitle"/>
-          <include name="smokeTest_parameter"/>
-          <include name="tearDownAfterClass"/>
-          <include name="edit_Return_valid"/>
-          <include name="valid_edit"/>
-          <include name="setUpBeforeClass"/>
-          <include name="edit_clearForm_valid"/>
-          <include name="edit_select_valid"/>
-          <include name="addNewEntry_InvalidTestCases_FillFirstName"/>
-          <include name="edit_webUrl_invalid"/>
-          <include name="addNewEntry_InvalidTestCases_FillAddressLine1"/>
-          <include name="edit_fields_OnMax"/>
+          <include name="teardown"/>
+          <include name="Initialization"/>
+          <include name="edit_invalid"/>
         </methods>
       </class> <!-- AutoYDTest -->
     </classes>

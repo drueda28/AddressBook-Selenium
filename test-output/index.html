@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">21 methods,   21 passed</span>
+                    <span class="method-stats">21 methods, 1 failed,   20 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_invalid">edit_invalid</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,22 +117,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="addNewEntry_InvalidTestCases_FillAddressLine1">addNewEntry_InvalidTestCases_FillAddressLine1</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="addNewEntry_InvalidTestCases_EmptyAddress">addNewEntry_InvalidTestCases_EmptyAddress</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="addNewEntry_InvalidTestCases_FillFirstName">addNewEntry_InvalidTestCases_FillFirstName</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames(addr_addr_line_1, 456 Street 3)">addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames(addr_addr_line_1, 456 Street 3)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="clickFirstViewDetail">clickFirstViewDetail</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_Return_valid">edit_Return_valid</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_Return_valid(Address Book)">edit_Return_valid(Address Book)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -128,57 +137,57 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_last_name, BagyusrjnI8nNLpTEQvU43LTqQe57RqT3lIoHIwAC7uNgMOEAs)">edit_fields_OnMax(addr_last_name, BagyusrjnI8nNLpTEQvU43LTqQe57RqT3lIoHIwAC7uNgMOEAs)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_email_1, UDu3v2v72049iHTLc78i6wd4RJ5ST9wK5g1gzEwwtXyQllOktfrcReAeWW80kviiFaP67VJksCuBSGHVyojIGi...)">edit_fields_OnMax(addr_email_1, UDu3v2v72049iHTLc78i6wd4RJ5ST9wK5g1gzEwwtXyQllOktfrcReAeWW80kviiFaP67VJksCuBSGHVyojIGi...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_phone_1, 17180383991755695829144430827114557873891503039105205254962413093553735796017411599461...)">edit_fields_OnMax(addr_phone_1, 17180383991755695829144430827114557873891503039105205254962413093553735796017411599461...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_first_name, 0qyvdEV9KECxyPJLlM4lLLFsxtwGFvmZjU6i0TvoqWV8TnhPk2)">edit_fields_OnMax(addr_first_name, 0qyvdEV9KECxyPJLlM4lLLFsxtwGFvmZjU6i0TvoqWV8TnhPk2)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_post_code, mAN5Hy9rtYaErWn6MaU4)">edit_fields_OnMax(addr_post_code, mAN5Hy9rtYaErWn6MaU4)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_business, EihKFD6TYrpYDEjHmTJ9mTd3j6K0E0Ugho9dISTbYd48XUmOjIEqvj4XTw9GbQldI10e8alWLsT)">edit_fields_OnMax(addr_business, EihKFD6TYrpYDEjHmTJ9mTd3j6K0E0Ugho9dISTbYd48XUmOjIEqvj4XTw9GbQldI10e8alWLsT)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_city, zV79UjoDXRjtFijaxK5RWFSIZVdOxTWO8pGT5gwJyBxmsPYN6N)">edit_fields_OnMax(addr_city, zV79UjoDXRjtFijaxK5RWFSIZVdOxTWO8pGT5gwJyBxmsPYN6N)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_addr_line_1, ggHp9lJdtizDQnn7pNw54HjeraaBWT53QZii2ALXg24FQt9PpJp4e8EjAXkU1NUNt10bV4KTCmn)">edit_fields_OnMax(addr_addr_line_1, ggHp9lJdtizDQnn7pNw54HjeraaBWT53QZii2ALXg24FQt9PpJp4e8EjAXkU1NUNt10bV4KTCmn)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_web_url_1, http://B1pXpgFk9WmD6npfGO2Xq22BhjKpzO1Ul6L2w7BluyXGFxnApmCloCgJsximg0thcsGQmhLzkl65t...)">edit_fields_OnMax(addr_web_url_1, http://B1pXpgFk9WmD6npfGO2Xq22BhjKpzO1Ul6L2w7BluyXGFxnApmCloCgJsximg0thcsGQmhLzkl65t...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_web_url_1, http://pyC8CU16LSAZqwXhlY5kU9sxvoty2d6op9hOxjRLQwxHP582euJwR6VllI3xnHKvBcnZZ6uVpCy2m...)">edit_fields_OnMax(addr_web_url_1, http://pyC8CU16LSAZqwXhlY5kU9sxvoty2d6op9hOxjRLQwxHP582euJwR6VllI3xnHKvBcnZZ6uVpCy2m...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_email_1, 1BAkbtnidnvH6apCPOurr1X7PvIATssFpJlwT6bJ3qIMp3kEP914peJAHWCkK390qP7sKWpyWBCEX87VrBrK7C...)">edit_fields_OnMax(addr_email_1, 1BAkbtnidnvH6apCPOurr1X7PvIATssFpJlwT6bJ3qIMp3kEP914peJAHWCkK390qP7sKWpyWBCEX87VrBrK7C...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_post_code, 8xc7Z7bMc2iBVEJylf9S)">edit_fields_OnMax(addr_post_code, 8xc7Z7bMc2iBVEJylf9S)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_country, tpk1oeAO0teFAU9ClNAeqQJDJ1pjjsHSu74KxX6TTWT70pRVIk)">edit_fields_OnMax(addr_country, tpk1oeAO0teFAU9ClNAeqQJDJ1pjjsHSu74KxX6TTWT70pRVIk)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_phone_1, veLjiD5T5yPorhTn1gOSb6r34)">edit_fields_OnMax(addr_phone_1, veLjiD5T5yPorhTn1gOSb6r34)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_addr_line_1, MuK5QKGzV2yGfJlWx45DcdsrhMuomRXM5nzj7ZLDLDIPa8KGTRSGVulrGBbxitxp8Oz2rH1wsk6)">edit_fields_OnMax(addr_addr_line_1, MuK5QKGzV2yGfJlWx45DcdsrhMuomRXM5nzj7ZLDLDIPa8KGTRSGVulrGBbxitxp8Oz2rH1wsk6)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_city, 2zfxOtbJRCPl5PLjVuLqbLqpfDI9oFv7jV6Mdt5bgQ6W9SpQCg)">edit_fields_OnMax(addr_city, 2zfxOtbJRCPl5PLjVuLqbLqpfDI9oFv7jV6Mdt5bgQ6W9SpQCg)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_business, SMVr4jrzpezFVYhjRN1MwSpXltb6dznrd4sxkn3KkVHrejcXtc7lDnMpcgnEPV5ZyABgYWgwxEj)">edit_fields_OnMax(addr_business, SMVr4jrzpezFVYhjRN1MwSpXltb6dznrd4sxkn3KkVHrejcXtc7lDnMpcgnEPV5ZyABgYWgwxEj)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_country, ZNE2sJC9Zrao8ANU4Ctb9VWtRyZSfJUExohwoix54mX3hyQR6z)">edit_fields_OnMax(addr_country, ZNE2sJC9Zrao8ANU4Ctb9VWtRyZSfJUExohwoix54mX3hyQR6z)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_region, 0PNQdvd18hBP79bXuPFrHYLM0tT9ljol99eukDJFmcsRvDqRrm)">edit_fields_OnMax(addr_region, 0PNQdvd18hBP79bXuPFrHYLM0tT9ljol99eukDJFmcsRvDqRrm)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_region, cGGctX1FrAd8IV9DTaUBu8bxrceRwYHFSGRQl0MxZGEPssefA1)">edit_fields_OnMax(addr_region, cGGctX1FrAd8IV9DTaUBu8bxrceRwYHFSGRQl0MxZGEPssefA1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_first_name, aGxBdUA53CD1d0q1QssyPof8HKlJjbYOFWqvP3gtYz1shrXvD4)">edit_fields_OnMax(addr_first_name, aGxBdUA53CD1d0q1QssyPof8HKlJjbYOFWqvP3gtYz1shrXvD4)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_fields_OnMax(addr_last_name, zFlmKGbNN8iGrPbmLfHwZipLDQtHbGFDNYVQIdXI1drc5PEeQv)">edit_fields_OnMax(addr_last_name, zFlmKGbNN8iGrPbmLfHwZipLDQtHbGFDNYVQIdXI1drc5PEeQv)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -188,7 +197,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_webUrl_invalid">edit_webUrl_invalid</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="edit_valid(1011 Fanshawe College)">edit_valid(1011 Fanshawe College)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -203,7 +212,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="valid_edit(1011 Fanshawe College)">valid_edit(1011 Fanshawe College)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="AutoYDTest" class="method navigator-link" hash-for-method="view_valid">view_valid</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -218,6 +227,45 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">AutoYDTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="edit_invalid">
+                  </a> <!-- edit_invalid -->
+                  <span class="method-name">edit_invalid</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;tag name&quot;,&quot;selector&quot;:&quot;h2&quot;}
+  (Session info: chrome=138.0.7204.50)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9e5c060d486ba2ddfd21aa4d05b02282, findElement {value=h2, using=tag name}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.50, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\virginia\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55274}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55274/devtoo..., se:cdpVersion: 138.0.7204.50, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e5c060d486ba2ddfd21aa4d05b02282
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at AutoYDTest.edit_invalid(AutoYDTest.java:331)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -226,30 +274,25 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addNewEntry_InvalidTestCases_FillAddressLine1">
-                  </a> <!-- addNewEntry_InvalidTestCases_FillAddressLine1 -->
-                  <span class="method-name">addNewEntry_InvalidTestCases_FillAddressLine1</span>
+                  <a name="addNewEntry_InvalidTestCases_EmptyAddress">
+                  </a> <!-- addNewEntry_InvalidTestCases_EmptyAddress -->
+                  <span class="method-name">addNewEntry_InvalidTestCases_EmptyAddress</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="addNewEntry_InvalidTestCases_FillFirstName">
-                  </a> <!-- addNewEntry_InvalidTestCases_FillFirstName -->
-                  <span class="method-name">addNewEntry_InvalidTestCases_FillFirstName</span>
+                  <a name="addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames(addr_addr_line_1, 456 Street 3)">
+                  </a> <!-- addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames(addr_addr_line_1, 456 Street 3) -->
+                  <span class="method-name">addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames</span>
+                  <span class="parameters">(addr_addr_line_1,456 Street 3)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="clickFirstViewDetail">
-                  </a> <!-- clickFirstViewDetail -->
-                  <span class="method-name">clickFirstViewDetail</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="edit_Return_valid">
-                  </a> <!-- edit_Return_valid -->
+                  <a name="edit_Return_valid(Address Book)">
+                  </a> <!-- edit_Return_valid(Address Book) -->
                   <span class="method-name">edit_Return_valid</span>
+                  <span class="parameters">(Address Book)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -261,90 +304,90 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_last_name, BagyusrjnI8nNLpTEQvU43LTqQe57RqT3lIoHIwAC7uNgMOEAs)">
-                  </a> <!-- edit_fields_OnMax(addr_last_name, BagyusrjnI8nNLpTEQvU43LTqQe57RqT3lIoHIwAC7uNgMOEAs) -->
+                  <a name="edit_fields_OnMax(addr_email_1, UDu3v2v72049iHTLc78i6wd4RJ5ST9wK5g1gzEwwtXyQllOktfrcReAeWW80kviiFaP67VJksCuBSGHVyojIGi...)">
+                  </a> <!-- edit_fields_OnMax(addr_email_1, UDu3v2v72049iHTLc78i6wd4RJ5ST9wK5g1gzEwwtXyQllOktfrcReAeWW80kviiFaP67VJksCuBSGHVyojIGi...) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_last_name,BagyusrjnI8nNLpTEQvU43LTqQe57RqT3lIoHIwAC7uNgMOEAs)</span>
+                  <span class="parameters">(addr_email_1,UDu3v2v72049iHTLc78i6wd4RJ5ST9wK5g1gzEwwtXyQllOktfrcReAeWW80kviiFaP67VJksCuBSGHVyojIGir4OHPt7WSgJ7HHzmMNBPI1QpZqTNNk4IgV660m@com)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_phone_1, 17180383991755695829144430827114557873891503039105205254962413093553735796017411599461...)">
-                  </a> <!-- edit_fields_OnMax(addr_phone_1, 17180383991755695829144430827114557873891503039105205254962413093553735796017411599461...) -->
+                  <a name="edit_fields_OnMax(addr_first_name, 0qyvdEV9KECxyPJLlM4lLLFsxtwGFvmZjU6i0TvoqWV8TnhPk2)">
+                  </a> <!-- edit_fields_OnMax(addr_first_name, 0qyvdEV9KECxyPJLlM4lLLFsxtwGFvmZjU6i0TvoqWV8TnhPk2) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_phone_1,1718038399175569582914443082711455787389150303910520525496241309355373579601741159946138274242381418249580411734849297132218398031443573517753771001643344692214253818715995824245057315272100836890154269766389372761528362219946235400112852519)</span>
+                  <span class="parameters">(addr_first_name,0qyvdEV9KECxyPJLlM4lLLFsxtwGFvmZjU6i0TvoqWV8TnhPk2)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_post_code, mAN5Hy9rtYaErWn6MaU4)">
-                  </a> <!-- edit_fields_OnMax(addr_post_code, mAN5Hy9rtYaErWn6MaU4) -->
+                  <a name="edit_fields_OnMax(addr_business, EihKFD6TYrpYDEjHmTJ9mTd3j6K0E0Ugho9dISTbYd48XUmOjIEqvj4XTw9GbQldI10e8alWLsT)">
+                  </a> <!-- edit_fields_OnMax(addr_business, EihKFD6TYrpYDEjHmTJ9mTd3j6K0E0Ugho9dISTbYd48XUmOjIEqvj4XTw9GbQldI10e8alWLsT) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_post_code,mAN5Hy9rtYaErWn6MaU4)</span>
+                  <span class="parameters">(addr_business,EihKFD6TYrpYDEjHmTJ9mTd3j6K0E0Ugho9dISTbYd48XUmOjIEqvj4XTw9GbQldI10e8alWLsT)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_city, zV79UjoDXRjtFijaxK5RWFSIZVdOxTWO8pGT5gwJyBxmsPYN6N)">
-                  </a> <!-- edit_fields_OnMax(addr_city, zV79UjoDXRjtFijaxK5RWFSIZVdOxTWO8pGT5gwJyBxmsPYN6N) -->
+                  <a name="edit_fields_OnMax(addr_addr_line_1, ggHp9lJdtizDQnn7pNw54HjeraaBWT53QZii2ALXg24FQt9PpJp4e8EjAXkU1NUNt10bV4KTCmn)">
+                  </a> <!-- edit_fields_OnMax(addr_addr_line_1, ggHp9lJdtizDQnn7pNw54HjeraaBWT53QZii2ALXg24FQt9PpJp4e8EjAXkU1NUNt10bV4KTCmn) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_city,zV79UjoDXRjtFijaxK5RWFSIZVdOxTWO8pGT5gwJyBxmsPYN6N)</span>
+                  <span class="parameters">(addr_addr_line_1,ggHp9lJdtizDQnn7pNw54HjeraaBWT53QZii2ALXg24FQt9PpJp4e8EjAXkU1NUNt10bV4KTCmn)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_web_url_1, http://B1pXpgFk9WmD6npfGO2Xq22BhjKpzO1Ul6L2w7BluyXGFxnApmCloCgJsximg0thcsGQmhLzkl65t...)">
-                  </a> <!-- edit_fields_OnMax(addr_web_url_1, http://B1pXpgFk9WmD6npfGO2Xq22BhjKpzO1Ul6L2w7BluyXGFxnApmCloCgJsximg0thcsGQmhLzkl65t...) -->
+                  <a name="edit_fields_OnMax(addr_web_url_1, http://pyC8CU16LSAZqwXhlY5kU9sxvoty2d6op9hOxjRLQwxHP582euJwR6VllI3xnHKvBcnZZ6uVpCy2m...)">
+                  </a> <!-- edit_fields_OnMax(addr_web_url_1, http://pyC8CU16LSAZqwXhlY5kU9sxvoty2d6op9hOxjRLQwxHP582euJwR6VllI3xnHKvBcnZZ6uVpCy2m...) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_web_url_1,http://B1pXpgFk9WmD6npfGO2Xq22BhjKpzO1Ul6L2w7BluyXGFxnApmCloCgJsximg0thcsGQmhLzkl65tWMmQYajwwdLEvifi0dG0GY2eBsAbBn8kkQ6Nve32Fn4x)</span>
+                  <span class="parameters">(addr_web_url_1,http://pyC8CU16LSAZqwXhlY5kU9sxvoty2d6op9hOxjRLQwxHP582euJwR6VllI3xnHKvBcnZZ6uVpCy2mka126QwwNouDHh3FhqpLyaKeBc7GWFhtD6RONFLzPfQq)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_email_1, 1BAkbtnidnvH6apCPOurr1X7PvIATssFpJlwT6bJ3qIMp3kEP914peJAHWCkK390qP7sKWpyWBCEX87VrBrK7C...)">
-                  </a> <!-- edit_fields_OnMax(addr_email_1, 1BAkbtnidnvH6apCPOurr1X7PvIATssFpJlwT6bJ3qIMp3kEP914peJAHWCkK390qP7sKWpyWBCEX87VrBrK7C...) -->
+                  <a name="edit_fields_OnMax(addr_post_code, 8xc7Z7bMc2iBVEJylf9S)">
+                  </a> <!-- edit_fields_OnMax(addr_post_code, 8xc7Z7bMc2iBVEJylf9S) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_email_1,1BAkbtnidnvH6apCPOurr1X7PvIATssFpJlwT6bJ3qIMp3kEP914peJAHWCkK390qP7sKWpyWBCEX87VrBrK7C7EtRoPyU28dpm8MMPMjnfL9gaiXE6f03l7GuXD@com)</span>
+                  <span class="parameters">(addr_post_code,8xc7Z7bMc2iBVEJylf9S)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_country, tpk1oeAO0teFAU9ClNAeqQJDJ1pjjsHSu74KxX6TTWT70pRVIk)">
-                  </a> <!-- edit_fields_OnMax(addr_country, tpk1oeAO0teFAU9ClNAeqQJDJ1pjjsHSu74KxX6TTWT70pRVIk) -->
+                  <a name="edit_fields_OnMax(addr_phone_1, veLjiD5T5yPorhTn1gOSb6r34)">
+                  </a> <!-- edit_fields_OnMax(addr_phone_1, veLjiD5T5yPorhTn1gOSb6r34) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_country,tpk1oeAO0teFAU9ClNAeqQJDJ1pjjsHSu74KxX6TTWT70pRVIk)</span>
+                  <span class="parameters">(addr_phone_1,veLjiD5T5yPorhTn1gOSb6r34)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_addr_line_1, MuK5QKGzV2yGfJlWx45DcdsrhMuomRXM5nzj7ZLDLDIPa8KGTRSGVulrGBbxitxp8Oz2rH1wsk6)">
-                  </a> <!-- edit_fields_OnMax(addr_addr_line_1, MuK5QKGzV2yGfJlWx45DcdsrhMuomRXM5nzj7ZLDLDIPa8KGTRSGVulrGBbxitxp8Oz2rH1wsk6) -->
+                  <a name="edit_fields_OnMax(addr_city, 2zfxOtbJRCPl5PLjVuLqbLqpfDI9oFv7jV6Mdt5bgQ6W9SpQCg)">
+                  </a> <!-- edit_fields_OnMax(addr_city, 2zfxOtbJRCPl5PLjVuLqbLqpfDI9oFv7jV6Mdt5bgQ6W9SpQCg) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_addr_line_1,MuK5QKGzV2yGfJlWx45DcdsrhMuomRXM5nzj7ZLDLDIPa8KGTRSGVulrGBbxitxp8Oz2rH1wsk6)</span>
+                  <span class="parameters">(addr_city,2zfxOtbJRCPl5PLjVuLqbLqpfDI9oFv7jV6Mdt5bgQ6W9SpQCg)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_business, SMVr4jrzpezFVYhjRN1MwSpXltb6dznrd4sxkn3KkVHrejcXtc7lDnMpcgnEPV5ZyABgYWgwxEj)">
-                  </a> <!-- edit_fields_OnMax(addr_business, SMVr4jrzpezFVYhjRN1MwSpXltb6dznrd4sxkn3KkVHrejcXtc7lDnMpcgnEPV5ZyABgYWgwxEj) -->
+                  <a name="edit_fields_OnMax(addr_country, ZNE2sJC9Zrao8ANU4Ctb9VWtRyZSfJUExohwoix54mX3hyQR6z)">
+                  </a> <!-- edit_fields_OnMax(addr_country, ZNE2sJC9Zrao8ANU4Ctb9VWtRyZSfJUExohwoix54mX3hyQR6z) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_business,SMVr4jrzpezFVYhjRN1MwSpXltb6dznrd4sxkn3KkVHrejcXtc7lDnMpcgnEPV5ZyABgYWgwxEj)</span>
+                  <span class="parameters">(addr_country,ZNE2sJC9Zrao8ANU4Ctb9VWtRyZSfJUExohwoix54mX3hyQR6z)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_region, 0PNQdvd18hBP79bXuPFrHYLM0tT9ljol99eukDJFmcsRvDqRrm)">
-                  </a> <!-- edit_fields_OnMax(addr_region, 0PNQdvd18hBP79bXuPFrHYLM0tT9ljol99eukDJFmcsRvDqRrm) -->
+                  <a name="edit_fields_OnMax(addr_region, cGGctX1FrAd8IV9DTaUBu8bxrceRwYHFSGRQl0MxZGEPssefA1)">
+                  </a> <!-- edit_fields_OnMax(addr_region, cGGctX1FrAd8IV9DTaUBu8bxrceRwYHFSGRQl0MxZGEPssefA1) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_region,0PNQdvd18hBP79bXuPFrHYLM0tT9ljol99eukDJFmcsRvDqRrm)</span>
+                  <span class="parameters">(addr_region,cGGctX1FrAd8IV9DTaUBu8bxrceRwYHFSGRQl0MxZGEPssefA1)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_fields_OnMax(addr_first_name, aGxBdUA53CD1d0q1QssyPof8HKlJjbYOFWqvP3gtYz1shrXvD4)">
-                  </a> <!-- edit_fields_OnMax(addr_first_name, aGxBdUA53CD1d0q1QssyPof8HKlJjbYOFWqvP3gtYz1shrXvD4) -->
+                  <a name="edit_fields_OnMax(addr_last_name, zFlmKGbNN8iGrPbmLfHwZipLDQtHbGFDNYVQIdXI1drc5PEeQv)">
+                  </a> <!-- edit_fields_OnMax(addr_last_name, zFlmKGbNN8iGrPbmLfHwZipLDQtHbGFDNYVQIdXI1drc5PEeQv) -->
                   <span class="method-name">edit_fields_OnMax</span>
-                  <span class="parameters">(addr_first_name,aGxBdUA53CD1d0q1QssyPof8HKlJjbYOFWqvP3gtYz1shrXvD4)</span>
+                  <span class="parameters">(addr_last_name,zFlmKGbNN8iGrPbmLfHwZipLDQtHbGFDNYVQIdXI1drc5PEeQv)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -356,9 +399,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="edit_webUrl_invalid">
-                  </a> <!-- edit_webUrl_invalid -->
-                  <span class="method-name">edit_webUrl_invalid</span>
+                  <a name="edit_valid(1011 Fanshawe College)">
+                  </a> <!-- edit_valid(1011 Fanshawe College) -->
+                  <span class="method-name">edit_valid</span>
+                  <span class="parameters">(1011 Fanshawe College)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -378,10 +422,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="valid_edit(1011 Fanshawe College)">
-                  </a> <!-- valid_edit(1011 Fanshawe College) -->
-                  <span class="method-name">valid_edit</span>
-                  <span class="parameters">(1011 Fanshawe College)</span>
+                  <a name="view_valid">
+                  </a> <!-- view_valid -->
+                  <span class="method-name">view_valid</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -397,6 +440,9 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;AotuoYDTestSuite&quot;&gt;
+    &lt;parameter name=&quot;screenShotFolder&quot; value=&quot;Screenshots&quot;/&gt;
+    &lt;parameter name=&quot;baseURL&quot; value=&quot;http:localhost/addressbook/index.php&quot;/&gt;
+    &lt;parameter name=&quot;driverFolder&quot; value=&quot;\\Driver\\chromedriver.exe&quot;/&gt;
     &lt;parameter name=&quot;addr1&quot; value=&quot;1011 Fanshawe College&quot;/&gt;
     &lt;parameter name=&quot;businessname&quot; value=&quot;Fansahwe College London Ontario&quot;/&gt;
     &lt;parameter name=&quot;title&quot; value=&quot;Address Book&quot;/&gt;
@@ -445,92 +491,92 @@ data.addRows(21);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'edit_select_valid')
 data.setCell(0, 2, 'AutoYDTest')
-data.setCell(0, 3, 2787);
+data.setCell(0, 3, 1527);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'edit_fields_OnMax')
 data.setCell(1, 2, 'AutoYDTest')
-data.setCell(1, 3, 2130);
+data.setCell(1, 3, 791);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'edit_fields_OnMax')
 data.setCell(2, 2, 'AutoYDTest')
-data.setCell(2, 3, 1643);
+data.setCell(2, 3, 644);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'edit_fields_OnMax')
 data.setCell(3, 2, 'AutoYDTest')
-data.setCell(3, 3, 1538);
+data.setCell(3, 3, 634);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'addNewEntry_InvalidTestCases_FillAddressLine1')
+data.setCell(4, 1, 'edit_fields_OnMax')
 data.setCell(4, 2, 'AutoYDTest')
-data.setCell(4, 3, 1437);
+data.setCell(4, 3, 588);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'edit_fields_OnMax')
 data.setCell(5, 2, 'AutoYDTest')
-data.setCell(5, 3, 1349);
+data.setCell(5, 3, 586);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'edit_fields_OnMax')
 data.setCell(6, 2, 'AutoYDTest')
-data.setCell(6, 3, 1330);
+data.setCell(6, 3, 563);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'addNewEntry_InvalidTestCases_FillFirstName')
+data.setCell(7, 1, 'edit_fields_OnMax')
 data.setCell(7, 2, 'AutoYDTest')
-data.setCell(7, 3, 1327);
+data.setCell(7, 3, 559);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'edit_clearForm_valid')
+data.setCell(8, 1, 'edit_valid')
 data.setCell(8, 2, 'AutoYDTest')
-data.setCell(8, 3, 1300);
+data.setCell(8, 3, 558);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'edit_fields_OnMax')
 data.setCell(9, 2, 'AutoYDTest')
-data.setCell(9, 3, 1051);
+data.setCell(9, 3, 546);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'edit_Return_valid')
+data.setCell(10, 1, 'edit_fields_OnMax')
 data.setCell(10, 2, 'AutoYDTest')
-data.setCell(10, 3, 1007);
+data.setCell(10, 3, 542);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'valid_edit')
+data.setCell(11, 1, 'edit_fields_OnMax')
 data.setCell(11, 2, 'AutoYDTest')
-data.setCell(11, 3, 997);
+data.setCell(11, 3, 531);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'edit_fields_OnMax')
+data.setCell(12, 1, 'edit_clearForm_valid')
 data.setCell(12, 2, 'AutoYDTest')
-data.setCell(12, 3, 995);
+data.setCell(12, 3, 494);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'edit_fields_OnMax')
+data.setCell(13, 1, 'addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames')
 data.setCell(13, 2, 'AutoYDTest')
-data.setCell(13, 3, 989);
+data.setCell(13, 3, 449);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'edit_fields_OnMax')
+data.setCell(14, 1, 'addNewEntry_InvalidTestCases_EmptyAddress')
 data.setCell(14, 2, 'AutoYDTest')
-data.setCell(14, 3, 972);
+data.setCell(14, 3, 411);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'edit_fields_OnMax')
+data.setCell(15, 1, 'edit_Return_valid')
 data.setCell(15, 2, 'AutoYDTest')
-data.setCell(15, 3, 933);
+data.setCell(15, 3, 386);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'edit_fields_OnMax')
+data.setCell(16, 1, 'view_valid')
 data.setCell(16, 2, 'AutoYDTest')
-data.setCell(16, 3, 865);
+data.setCell(16, 3, 296);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'clickFirstViewDetail')
+data.setCell(17, 1, 'edit_fields_OnMax')
 data.setCell(17, 2, 'AutoYDTest')
-data.setCell(17, 3, 681);
+data.setCell(17, 3, 231);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'edit_webUrl_invalid')
+data.setCell(18, 1, 'edit_invalid')
 data.setCell(18, 2, 'AutoYDTest')
-data.setCell(18, 3, 429);
+data.setCell(18, 3, 163);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'smokeTest_parameter')
+data.setCell(19, 1, 'smokeTest_getTitle')
 data.setCell(19, 2, 'AutoYDTest')
-data.setCell(19, 3, 236);
+data.setCell(19, 3, 17);
 data.setCell(20, 0, 20)
-data.setCell(20, 1, 'smokeTest_getTitle')
+data.setCell(20, 1, 'smokeTest_parameter')
 data.setCell(20, 2, 'AutoYDTest')
-data.setCell(20, 3, 32);
+data.setCell(20, 3, 15);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -558,256 +604,258 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">AutoYDTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">clickFirstViewDetail</span>
-                <span class="method-start">1649 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">2333 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">2615 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_Return_valid</span>
-                <span class="method-start">3523 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">4538 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">4767 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_clearForm_valid</span>
-                <span class="method-start">6031 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">7334 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">7479 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_select_valid</span>
-                <span class="method-start">8486 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">11274 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">11434 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_webUrl_invalid</span>
-                <span class="method-start">12285 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">12715 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">12846 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">valid_edit(1011 Fanshawe College)</span>
-                <span class="method-start">13806 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">14806 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">14981 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_first_name, aGxBdUA53CD1d0q1QssyPof8HKlJjbYOFWqvP3gtYz1shrXvD4)</span>
-                <span class="method-start">16102 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">17076 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">17337 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_last_name, BagyusrjnI8nNLpTEQvU43LTqQe57RqT3lIoHIwAC7uNgMOEAs)</span>
-                <span class="method-start">18501 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">19554 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">19740 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_business, SMVr4jrzpezFVYhjRN1MwSpXltb6dznrd4sxkn3KkVHrejcXtc7lDnMpcgnEPV5ZyABgYWgwxEj)</span>
-                <span class="method-start">20728 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">22060 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">22273 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_addr_line_1, MuK5QKGzV2yGfJlWx45DcdsrhMuomRXM5nzj7ZLDLDIPa8KGTRSGVulrGBbxitxp8Oz2rH1wsk6)</span>
-                <span class="method-start">23383 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">24318 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">24493 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_city, zV79UjoDXRjtFijaxK5RWFSIZVdOxTWO8pGT5gwJyBxmsPYN6N)</span>
-                <span class="method-start">25814 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">27460 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">27718 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_region, 0PNQdvd18hBP79bXuPFrHYLM0tT9ljol99eukDJFmcsRvDqRrm)</span>
-                <span class="method-start">28968 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">29959 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">30115 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_country, tpk1oeAO0teFAU9ClNAeqQJDJ1pjjsHSu74KxX6TTWT70pRVIk)</span>
-                <span class="method-start">31417 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">32768 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">32927 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_post_code, mAN5Hy9rtYaErWn6MaU4)</span>
-                <span class="method-start">34024 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">35021 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">35233 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_email_1, 1BAkbtnidnvH6apCPOurr1X7PvIATssFpJlwT6bJ3qIMp3kEP914peJAHWCkK390qP7sKWpyWBCEX87VrBrK7C...)</span>
-                <span class="method-start">36065 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">37604 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">37734 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_phone_1, 17180383991755695829144430827114557873891503039105205254962413093553735796017411599461...)</span>
-                <span class="method-start">38683 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">39553 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">39684 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">edit_fields_OnMax(addr_web_url_1, http://B1pXpgFk9WmD6npfGO2Xq22BhjKpzO1Ul6L2w7BluyXGFxnApmCloCgJsximg0thcsGQmhLzkl65t...)</span>
-                <span class="method-start">40623 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">42755 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">42944 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
                 <span class="method-name">smokeTest_getTitle</span>
-                <span class="method-start">43954 ms</span>
+                <span class="method-start">1061 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">43987 ms</span>
+                <span class="method-name">teardown</span>
+                <span class="method-start">1209 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">44114 ms</span>
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">1351 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">smokeTest_parameter(Address Book)</span>
-                <span class="method-start">45286 ms</span>
+                <span class="method-start">2013 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">45524 ms</span>
+                <span class="method-name">teardown</span>
+                <span class="method-start">2137 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">45755 ms</span>
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">2275 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">addNewEntry_InvalidTestCases_FillAddressLine1</span>
-                <span class="method-start">46788 ms</span>
+                <span class="method-name">addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames(addr_addr_line_1, 456 Street 3)</span>
+                <span class="method-start">2935 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">48226 ms</span>
+                <span class="method-name">teardown</span>
+                <span class="method-start">3522 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUpBeforeClass</span>
-                <span class="method-start">48412 ms</span>
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">3682 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">addNewEntry_InvalidTestCases_FillFirstName</span>
-                <span class="method-start">49431 ms</span>
+                <span class="method-name">addNewEntry_InvalidTestCases_EmptyAddress</span>
+                <span class="method-start">4406 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDownAfterClass</span>
-                <span class="method-start">50759 ms</span>
+                <span class="method-name">teardown</span>
+                <span class="method-start">4913 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">5057 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_valid(1011 Fanshawe College)</span>
+                <span class="method-start">5748 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">6430 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">6570 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_clearForm_valid</span>
+                <span class="method-start">7289 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">7895 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">8038 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">view_valid</span>
+                <span class="method-start">8826 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">9222 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">9361 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_Return_valid(Address Book)</span>
+                <span class="method-start">10165 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">10657 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">10793 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_select_valid</span>
+                <span class="method-start">11484 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">13125 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">13239 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_first_name, 0qyvdEV9KECxyPJLlM4lLLFsxtwGFvmZjU6i0TvoqWV8TnhPk2)</span>
+                <span class="method-start">13913 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">14566 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">14726 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_last_name, zFlmKGbNN8iGrPbmLfHwZipLDQtHbGFDNYVQIdXI1drc5PEeQv)</span>
+                <span class="method-start">15386 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">16014 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">16161 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_business, EihKFD6TYrpYDEjHmTJ9mTd3j6K0E0Ugho9dISTbYd48XUmOjIEqvj4XTw9GbQldI10e8alWLsT)</span>
+                <span class="method-start">16899 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">17653 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">17783 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_addr_line_1, ggHp9lJdtizDQnn7pNw54HjeraaBWT53QZii2ALXg24FQt9PpJp4e8EjAXkU1NUNt10bV4KTCmn)</span>
+                <span class="method-start">18520 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">19218 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">19348 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_city, 2zfxOtbJRCPl5PLjVuLqbLqpfDI9oFv7jV6Mdt5bgQ6W9SpQCg)</span>
+                <span class="method-start">20138 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">20801 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">20946 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_region, cGGctX1FrAd8IV9DTaUBu8bxrceRwYHFSGRQl0MxZGEPssefA1)</span>
+                <span class="method-start">21632 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">22286 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">22412 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_country, ZNE2sJC9Zrao8ANU4Ctb9VWtRyZSfJUExohwoix54mX3hyQR6z)</span>
+                <span class="method-start">23146 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">23625 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">23769 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_post_code, 8xc7Z7bMc2iBVEJylf9S)</span>
+                <span class="method-start">24429 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">25108 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">25243 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_email_1, UDu3v2v72049iHTLc78i6wd4RJ5ST9wK5g1gzEwwtXyQllOktfrcReAeWW80kviiFaP67VJksCuBSGHVyojIGi...)</span>
+                <span class="method-start">25978 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">26874 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">27036 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_phone_1, veLjiD5T5yPorhTn1gOSb6r34)</span>
+                <span class="method-start">27718 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">28410 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">28555 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">edit_fields_OnMax(addr_web_url_1, http://pyC8CU16LSAZqwXhlY5kU9sxvoty2d6op9hOxjRLQwxHP582euJwR6VllI3xnHKvBcnZZ6uVpCy2m...)</span>
+                <span class="method-start">29236 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">29983 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">Initialization(http:localhost/addressbook/index.php, \\Driver\\chromedriver.exe, Screenshots)</span>
+                <span class="method-start">30128 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">edit_invalid</span>
+                <span class="method-start">30910 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">31182 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

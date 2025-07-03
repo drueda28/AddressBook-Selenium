@@ -4,7 +4,7 @@ import java.io.IOException;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class IListener extends BasicClass implements ITestListener {
+public class IListener extends BaseClass implements ITestListener {
 	
 	public void onTestSuccess(ITestResult result)
 	{
@@ -27,9 +27,4 @@ public class IListener extends BasicClass implements ITestListener {
 			e.printStackTrace();
 		}
 	}
-	
-	
-
-
 }
-
