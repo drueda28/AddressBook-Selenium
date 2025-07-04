@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>AotuoYDTestSuite</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>20/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>20/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 03 19:15:09 EDT 2025</td>
+<td>Started on:</td><td>Thu Jul 03 22:16:00 EDT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>31 seconds (31341 ms)</td>
+<tr><td>Total time:</td><td>62 seconds (62561 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,54 +76,59 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='AutoYDTest.edit_invalid()'><b>edit_invalid</b><br>Test class: AutoYDTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;tag name&quot;,&quot;selector&quot;:&quot;h2&quot;}
-  (Session info: chrome=138.0.7204.50)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9e5c060d486ba2ddfd21aa4d05b02282, findElement {value=h2, using=tag name}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.50, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\virginia\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55274}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55274/devtoo..., se:cdpVersion: 138.0.7204.50, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9e5c060d486ba2ddfd21aa4d05b02282
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at AutoYDTest.edit_invalid(AutoYDTest.java:331)
+<td title='AutoYDTest.edit_invalid_sepcialChar()'><b>edit_invalid_sepcialChar</b><br>Test class: AutoYDTest<br>Parameters: addr_first_name, !@#$%^&*()</td>
+<td><div><pre>java.lang.AssertionError: did not expect [The address book entry was updated successfully] but found [The address book entry was updated successfully]
+	at AutoYDTest.edit_invalid_sepcialChar(AutoYDTest.java:348)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace487369776", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace487369776'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;tag name&quot;,&quot;selector&quot;:&quot;h2&quot;}
-  (Session info: chrome=138.0.7204.50)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9e5c060d486ba2ddfd21aa4d05b02282, findElement {value=h2, using=tag name}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.50, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\virginia\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55274}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55274/devtoo..., se:cdpVersion: 138.0.7204.50, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9e5c060d486ba2ddfd21aa4d05b02282
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at AutoYDTest.edit_invalid(AutoYDTest.java:331)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2138849804", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2138849804'><pre>java.lang.AssertionError: did not expect [The address book entry was updated successfully] but found [The address book entry was updated successfully]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failEquals(Assert.java:1594)
+	at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
+	at org.testng.Assert.assertNotEquals(Assert.java:2217)
+	at org.testng.Assert.assertNotEquals(Assert.java:2239)
+	at AutoYDTest.edit_invalid_sepcialChar(AutoYDTest.java:348)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_invalid_security()'><b>edit_invalid_security</b><br>Test class: AutoYDTest<br>Parameters: addr_last_name, <script>alert('Hello World')</script></td>
+<td><div><pre>java.lang.AssertionError: expected [false] but found [true]
+	at AutoYDTest.edit_invalid_security(AutoYDTest.java:361)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1823354445", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1823354445'><pre>java.lang.AssertionError: expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at org.testng.Assert.assertFalse(Assert.java:89)
+	at AutoYDTest.edit_invalid_security(AutoYDTest.java:361)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -163,12 +168,92 @@ Session ID: 9e5c060d486ba2ddfd21aa4d05b02282
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_email_1, UDu3v2v72049iHTLc78i6wd4RJ5ST9wK5g1gzEwwtXyQllOktfrcReAeWW80kviiFaP67VJksCuBSGHVyojIGir4OHPt7WSgJ7HHzmMNBPI1QpZqTNNk4IgV660m@com</td>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_web_url_1, http://La3aXQKBefbIIg64E44Sw1DYDpuruiR3bHX3P3Pq0aFH9SDh8V8Ak649YjLuc632onMUXd4ZoFkHC1KkwpsRa7n1gjJ94CiRIAXNo3RULjApoEsimOhQYrQ44</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_first_name, GenEACOmAHWApcGNhydSnKh2lLXLYG6WBtH91GXg5cIQ86MJIi</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames()'><b>addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames</b><br>Test class: AutoYDTest<br>Parameters: addr_addr_line_1, 456 Street 3</td>
 <td></td>
 <td>0</td>
 <td>AutoYDTest@17f7cd29</td></tr>
 <tr>
-<td title='AutoYDTest.addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames()'><b>addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames</b><br>Test class: AutoYDTest<br>Parameters: addr_addr_line_1, 456 Street 3</td>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_country, UH0hm3EuWkgXy45X0ur1iPYEhU0YxVIpO5mtCpATLC0SROl7Ev</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_select_valid()'><b>edit_select_valid</b><br>Test class: AutoYDTest</td>
+<td></td>
+<td>4</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.smokeTest_parameter()'><b>smokeTest_parameter</b><br>Test class: AutoYDTest<br>Parameters: Address Book</td>
+<td></td>
+<td>0</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_business, TFsnWNAWTryozI30u9QVxoVSWggPNxyIlCtP4dn269nxxUaipW8RE92MGwLuns1kAOOSFVX5NRD</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_post_code, 7nJx1Vz9CaNERjMZxYGy</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_addr_line_1, pbAjvpx4ONH7ofWfzyrYgnrAGgYTlChuKQBF4UFvUDT4YoHgDV6auR0WXf6ehgujuoxHoFYIcj4</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.addNewEntry_InvalidTestCases_EmptyAddress()'><b>addNewEntry_InvalidTestCases_EmptyAddress</b><br>Test class: AutoYDTest</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_city, b66t2PNJBVV5HptrxboFt7FfEIktXsHNy303C0fNzQ7uepubWv</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_phone_1, Qi2JDFh1Z0xPsVtPJClrKhiYB</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_last_name, uF2nZlEyG0CEs4qeIHwB6xtXR5MJNJ4yh0N5PbGa9BOwY9kefS</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_valid()'><b>edit_valid</b><br>Test class: AutoYDTest<br>Parameters: 1011 Fanshawe College</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_email_1, Qy8nSAvegBgOBlrdlpjLXcBD8zYfsveJ2iWvJF1X1WtoNuJEc6q42y9y8OHZTcG171wMauGC4Se5iYXS4OakLoF5oz1VJ8LkE9MONs3hgLsebd3kR94PMZDbMQBB@com</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.smokeTest_getTitle()'><b>smokeTest_getTitle</b><br>Test class: AutoYDTest</td>
+<td></td>
+<td>0</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_clearForm_valid()'><b>edit_clearForm_valid</b><br>Test class: AutoYDTest</td>
+<td></td>
+<td>1</td>
+<td>AutoYDTest@17f7cd29</td></tr>
+<tr>
+<td title='AutoYDTest.edit_Return_valid()'><b>edit_Return_valid</b><br>Test class: AutoYDTest<br>Parameters: Address Book</td>
 <td></td>
 <td>0</td>
 <td>AutoYDTest@17f7cd29</td></tr>
@@ -178,89 +263,9 @@ Session ID: 9e5c060d486ba2ddfd21aa4d05b02282
 <td>0</td>
 <td>AutoYDTest@17f7cd29</td></tr>
 <tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_first_name, 0qyvdEV9KECxyPJLlM4lLLFsxtwGFvmZjU6i0TvoqWV8TnhPk2</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_business, EihKFD6TYrpYDEjHmTJ9mTd3j6K0E0Ugho9dISTbYd48XUmOjIEqvj4XTw9GbQldI10e8alWLsT</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_addr_line_1, ggHp9lJdtizDQnn7pNw54HjeraaBWT53QZii2ALXg24FQt9PpJp4e8EjAXkU1NUNt10bV4KTCmn</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_web_url_1, http://pyC8CU16LSAZqwXhlY5kU9sxvoty2d6op9hOxjRLQwxHP582euJwR6VllI3xnHKvBcnZZ6uVpCy2mka126QwwNouDHh3FhqpLyaKeBc7GWFhtD6RONFLzPfQq</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_post_code, 8xc7Z7bMc2iBVEJylf9S</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_select_valid()'><b>edit_select_valid</b><br>Test class: AutoYDTest</td>
+<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_region, JKElC7EOvbnp5haxiOuElghjGz70MjF83kquZF7Q2gcUqCNRxi</td>
 <td></td>
 <td>1</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_valid()'><b>edit_valid</b><br>Test class: AutoYDTest<br>Parameters: 1011 Fanshawe College</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_Return_valid()'><b>edit_Return_valid</b><br>Test class: AutoYDTest<br>Parameters: Address Book</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_phone_1, veLjiD5T5yPorhTn1gOSb6r34</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.smokeTest_parameter()'><b>smokeTest_parameter</b><br>Test class: AutoYDTest<br>Parameters: Address Book</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.smokeTest_getTitle()'><b>smokeTest_getTitle</b><br>Test class: AutoYDTest</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.addNewEntry_InvalidTestCases_EmptyAddress()'><b>addNewEntry_InvalidTestCases_EmptyAddress</b><br>Test class: AutoYDTest</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_city, 2zfxOtbJRCPl5PLjVuLqbLqpfDI9oFv7jV6Mdt5bgQ6W9SpQCg</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_country, ZNE2sJC9Zrao8ANU4Ctb9VWtRyZSfJUExohwoix54mX3hyQR6z</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_clearForm_valid()'><b>edit_clearForm_valid</b><br>Test class: AutoYDTest</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_region, cGGctX1FrAd8IV9DTaUBu8bxrceRwYHFSGRQl0MxZGEPssefA1</td>
-<td></td>
-<td>0</td>
-<td>AutoYDTest@17f7cd29</td></tr>
-<tr>
-<td title='AutoYDTest.edit_fields_OnMax()'><b>edit_fields_OnMax</b><br>Test class: AutoYDTest<br>Parameters: addr_last_name, zFlmKGbNN8iGrPbmLfHwZipLDQtHbGFDNYVQIdXI1drc5PEeQv</td>
-<td></td>
-<td>0</td>
 <td>AutoYDTest@17f7cd29</td></tr>
 </table><p>
 </body>

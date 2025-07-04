@@ -2,10 +2,11 @@
 /**
  * File: AutoYDTest
  * Authors: Yun-Jiung Wang,Danna Rueda,Daivanshika Patel
- * Description: This is an Automate Test Cases for AddressBook
+ * Description: This file contains all the Test Cases we made for AddressBook
  * Date: June 12,2025
  */
 
+import java.time.Duration;
 import java.util.HashMap;
 
 import java.util.List;
@@ -16,7 +17,9 @@ import org.junit.jupiter.api.Assertions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,6 +28,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotEquals;
 
 @Listeners(IListener.class)
@@ -45,7 +49,6 @@ public class AutoYDTest extends BaseClass {
 	private void toAddNewEntry() {
 		driver.get(LINK);
 		driver.findElement(By.linkText("Add New Entry")).click();
-		System.out.println("addNewEntry Link: " + driver.getCurrentUrl());
 	}
 
 	// This method is directing the web page from index page to List All Entries web
@@ -53,7 +56,6 @@ public class AutoYDTest extends BaseClass {
 	private void toListEntries() {
 		driver.get(LINK);
 		driver.findElement(By.linkText("List All Entries")).click();
-		System.out.println("List All Entries Link: " + driver.getCurrentUrl());
 	}
 
 	/*
@@ -89,8 +91,8 @@ public class AutoYDTest extends BaseClass {
 
 		try {
 			for (Map.Entry<String, String> entry : newMap.entrySet()) {
-				//entry.getKey()
-				WebElement ele = driver.findElement(By.xpath("//"));
+				// entry.getKey()
+				WebElement ele = driver.findElement(By.xpath("//input[@name='" + entry.getKey() + "']"));
 
 				// If the input value is null, do not change anything
 				if (entry.getValue() != null) {
@@ -148,12 +150,26 @@ public class AutoYDTest extends BaseClass {
 		}
 		return sb.toString();
 	}
-//------------- The end of tool methods --------- Test cases starts from here-----------// 
+
+	private void insertDataFromDataProvider(String key, String value) {
+
+		try {
+			WebElement webElement = driver.findElement(By.id(key));
+			webElement.clear();
+			webElement.sendKeys(value);
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return;
+		}
+	}
+	// ------------- The end of tool methods --------- Test cases starts from
+	// here-----------//
 
 	@Test(priority = 1)
+
 	void smokeTest_getTitle() {
-		String title = driver.getTitle();
-		System.out.println("title: " + title);
+		assertEquals("Address Book", driver.getTitle());
 	}
 
 	@Test(priority = 2)
@@ -178,6 +194,7 @@ public class AutoYDTest extends BaseClass {
 		try {
 			WebElement webElement = driver.findElement(By.xpath("//input[@name='" + key + "']"));
 			webElement.sendKeys(value);
+
 			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
@@ -247,7 +264,6 @@ public class AutoYDTest extends BaseClass {
 			System.out.println("ViewForms. size: " + viewForms.size());
 			if (!viewForms.isEmpty()) {
 				viewForms.get(0).findElement(By.xpath(".//input[@type='submit']")).click();
-				System.out.println("Clicked the first 'View Details' button.");
 			} else {
 				System.err.println("No 'View Details' forms found.");
 				return;
@@ -256,7 +272,7 @@ public class AutoYDTest extends BaseClass {
 			System.err.println("Error while clicking 'View Details': " + e.getMessage());
 			return;
 		}
-		
+
 		String page = driver.findElement(By.tagName("h2")).getText();
 		assertEquals("Address Book Entry Details", page);
 	}
@@ -265,8 +281,12 @@ public class AutoYDTest extends BaseClass {
 	@Parameters("title")
 	void edit_Return_valid(String title) {
 		toListEntries();
+
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		driver.findElement(By.linkText("Return (Cancel)")).click();
+
+		// Wait the Return Button shows
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Return')]"))).click();
 
 		assertEquals(title, driver.getTitle());
 	}
@@ -292,7 +312,6 @@ public class AutoYDTest extends BaseClass {
 
 	@Test(priority = 15, dataProvider = "edit_fields_OnMax")
 	void edit_fields_OnMax(String key, String value) {
-		System.out.println("Key: " + key + " Value: " + value);
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 
@@ -300,7 +319,7 @@ public class AutoYDTest extends BaseClass {
 			WebElement webElement = driver.findElement(By.id(key));
 			webElement.clear();
 			webElement.sendKeys(value);
-			driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			return;
@@ -319,27 +338,32 @@ public class AutoYDTest extends BaseClass {
 				{ "addr_phone_1", genString(25) }, { "addr_web_url_1", "http://" + genString(121) } };
 	}
 
-	@Test(priority = 16)
-	void edit_invalid() {
+	@Test(priority = 16, dataProvider = "edit_fields_Invalid_sepcialChar")
+	void edit_invalid_sepcialChar(String key, String value) {
 		toListEntries();
-
-		try {
-			fillForm("", "", "WebUrl test", "", "", "", "fanshawe.ca/p=1", null);
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
+		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
+		insertDataFromDataProvider(key, value);
 
 		String message = driver.findElement(By.tagName("h2")).getText();
-
 		assertNotEquals(SUCCESS_MESSAGE, message);
 	}
 
-	@DataProvider(name = "edit_invalid")
-	Object[][] edit_fields_Invalid() {
-		return new Object[][] { new Object[] { "addr_first_name", genString(50) }, { "addr_last_name", genString(50) },
-				{ "addr_business", genString(75) }, { "addr_addr_line_1", genString(75) },
-				{ "addr_city", genString(50) }, { "addr_region", genString(50) }, { "addr_country", genString(50) },
-				{ "addr_post_code", genString(20) }, { "addr_email_1", genString(124) + "@com" },
-				{ "addr_phone_1", genString(25) }, { "addr_web_url_1", "http://" + genString(121) } };
+	@DataProvider(name = "edit_fields_Invalid_sepcialChar")
+	Object[][] edit_fields_Invalid_sepcialChar() {
+		return new Object[][] { new Object[] { "addr_first_name", "!@#$%^&*()" } };
+	}
+
+	@Test(priority = 17, dataProvider = "edit_Invalid_alert")
+	void edit_invalid_security(String key, String value) {
+		insertDataFromDataProvider(key, value);
+		List<WebElement> successMessages = driver.findElements(By.xpath("//h2[text()='" + SUCCESS_MESSAGE + "']"));
+
+		assertFalse(successMessages.isEmpty());
+		assertNotEquals(SUCCESS_MESSAGE, successMessages.get(0));
+	}
+
+	@DataProvider(name = "edit_Invalid_alert")
+	Object[][] edit_Invalid_alert() {
+		return new Object[][] { new Object[] { "addr_last_name", "<script>alert('Hello World')</script>" } };
 	}
 }
