@@ -16,6 +16,7 @@ public class BaseClass {
 	static String screenShotPath; 
 	static String LINK;
 	static final String SUCCESS_MESSAGE = "The address book entry was updated successfully";
+	static final String ADDED_MESSAGE = "The new address book entry was added successfully";
 
 	public static void Launch(String baseURL, String driverFolder, String screenShotFolder) {
 		LINK = baseURL;

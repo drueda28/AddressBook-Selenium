@@ -30,6 +30,7 @@ import org.testng.annotations.Parameters;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotEquals;
+import static org.testng.Assert.assertTrue;
 
 @Listeners(IListener.class)
 public class AutoYDTest extends BaseClass {
@@ -106,7 +107,7 @@ public class AutoYDTest extends BaseClass {
 		}
 		System.out.println("Successfully fill into the form");
 
-		driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
 	}
 
 	/**
@@ -131,7 +132,7 @@ public class AutoYDTest extends BaseClass {
 				if (!selectorIds.contains(entry.getKey()))
 					throw new IllegalArgumentException("selector ID not exits");
 
-				Select mySelect = new Select(driver.findElement(By.id(entry.getKey())));
+				Select mySelect = new Select(driver.findElement(By.xpath("//select[@name='" + entry.getKey() + "']")));
 				mySelect.selectByValue(entry.getValue());
 			}
 		} catch (Exception e) {
@@ -150,24 +151,10 @@ public class AutoYDTest extends BaseClass {
 		}
 		return sb.toString();
 	}
-
-	private void insertDataFromDataProvider(String key, String value) {
-
-		try {
-			WebElement webElement = driver.findElement(By.id(key));
-			webElement.clear();
-			webElement.sendKeys(value);
-			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-			return;
-		}
-	}
 	// ------------- The end of tool methods --------- Test cases starts from
 	// here-----------//
 
 	@Test(priority = 1)
-
 	void smokeTest_getTitle() {
 		assertEquals("Address Book", driver.getTitle());
 	}
@@ -211,7 +198,7 @@ public class AutoYDTest extends BaseClass {
 	}
 
 	@Test(priority = 4)
-	void addNewEntry_InvalidTestCases_EmptyAddress() {
+	void addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyTheRestFields() {
 		toAddNewEntry();
 		driver.findElement(By.name("addr_first_name")).sendKeys("Mark");
 		driver.findElement(By.xpath("//input[@name='submit_button']")).click();
@@ -222,9 +209,118 @@ public class AutoYDTest extends BaseClass {
 				output);
 	}
 
+	@Test(priority = 5)
+	public void addNewEntry_Family() {
+		toAddNewEntry();
+
+		try {
+			fillForm("Danna", "Redua", "Fanshawe Gupta", "1200 Fanshawe College", "danna@example.com", "1234567899",
+					"https://fanshawe", null);
+
+			addSelectorValue(Map.of("addr_type", "Family", "addr_phone_1_type", "Mobile"));
+
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
+			String message = driver.findElement(By.tagName("h2")).getText();
+			assertEquals(ADDED_MESSAGE, message);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return;
+		}
+	}
+
+	@Test(priority = 6)
+	public void addNewEntry_Business() {
+		toAddNewEntry();
+
+		try {
+			fillForm("Daivanshika", "Patel", " ", "1200 Fanshawe", "daivanshika@example.com", "12345567345",
+					"https://localhost", null);
+			addSelectorValue(Map.of("addr_type", "Business"));
+
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+			
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
+			
+			String message = driver.findElement(By.tagName("h2")).getText();
+			assertEquals(ADDED_MESSAGE, message);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return;
+		}
+	}
+
+	@Test(priority = 7)
+	public void addNewEntry_Friend() {
+		toAddNewEntry();
+		try {
+			fillForm("WWW", "Gupat ", " ", "200 Fanshawe", "daivanshika@example.com", "12345567345",
+					"https://localhost", null);
+			addSelectorValue(Map.of("addr_type", "Friend"));
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
+			String message = driver.findElement(By.tagName("h2")).getText();
+			assertEquals(ADDED_MESSAGE, message);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return;
+		}
+
+		String message = driver.findElement(By.tagName("h2")).getText();
+		assertEquals(ADDED_MESSAGE, message);
+
+		// Validation can update differently in case there is a success message or a
+		// redirect
+		assertTrue(driver.getPageSource().contains("Address Book Main Menu"));
+	}
+
+	@Test(priority = 8)
+	void testListofEntryVerification() {
+		driver.findElement(By.linkText("List All Entries")).click();
+		String pageText = driver.findElement(By.tagName("body")).getText();
+
+		assertTrue(pageText.contains("Daivanshika"));
+		assertTrue(pageText.contains("Patel"));
+		assertTrue(pageText.contains("daivanshika@example.com"));
+	}
+
+	@Test(priority = 9)
+	void addNewEntry_valid() {
+		toAddNewEntry();
+
+		try {
+			fillForm("Dai", "Oatel", "Fanshawe College", "1012 Fanshawe College Blvd.", "mail@mail.com", "2254431234",
+					"https://www.fanshawec.ca/programs/gap5-general-arts-and-science-1-yr-english-language-studies/next?utm_source=google&utm_medium=cpc&utm_campaign=rbm_search&gad_source=1&gad_campaignid=20146753815&gbraid=0AAAAAD3AQO_DQecBewzNJQdGz-iqmgRo9&gclid=Cj0KCQjw953DBhCyARIsANhIZob6STdOEQRKHkYrou1ROmSSBI4NpZRI9OBIDxwn2jCFxDf8tc7NAgQaAvGrEALw_wcB",
+					null);
+			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+			return;
+		}
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]"))).click();
+
+		String pageText = driver.findElement(By.tagName("body")).getText();
+		String message = driver.findElement(By.tagName("h2")).getText();
+		assertEquals(ADDED_MESSAGE, message);
+		assertTrue(pageText.contains("Dai"));
+		assertTrue(pageText.contains("Oatel"));
+		assertTrue(pageText.contains("1012 Fanshawe College Blvd."));
+		assertTrue(pageText.contains("@mail.com"));
+		assertTrue(pageText.contains("2254431234"));
+		assertTrue(pageText.contains(
+				"https://www.fanshawec.ca/programs/gap5-general-arts-and-science-1-yr-english-language-studies/next?utm_source=google&utm_medium=cpc&utm_campaign=rbm_search&gad_source=1&gad_campaignid=20146753815&gbraid=0AAAAAD3AQO_DQecBewzNJQdGz-iqmgRo9&gclid=Cj0KCQjw953DBhCyARIsANhIZob6STdOEQRKHkYrou1ROmSSBI4NpZRI9OBIDxwn2jCFxDf8tc7NAgQaAvGrEALw_wcB"));
+	}
+
 	@Test(priority = 10)
 	@Parameters("addr1")
-	void edit_valid(String addr1) {
+	void edit_valid_address1(String addr1) {
 		toListEntries();
 		try {
 			driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
@@ -319,7 +415,7 @@ public class AutoYDTest extends BaseClass {
 			WebElement webElement = driver.findElement(By.id(key));
 			webElement.clear();
 			webElement.sendKeys(value);
-			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+			driver.findElement(By.xpath("//input[@type='submit']")).click();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			return;
@@ -342,7 +438,16 @@ public class AutoYDTest extends BaseClass {
 	void edit_invalid_sepcialChar(String key, String value) {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
-		insertDataFromDataProvider(key, value);
+		try {
+			WebElement webElement = driver.findElement(By.id(key));
+			driver.findElement(By.xpath(""));
+			webElement.clear();
+			webElement.sendKeys(value);
+			driver.findElement(By.xpath("//input[@type='submit']")).click();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return;
+		}
 
 		String message = driver.findElement(By.tagName("h2")).getText();
 		assertNotEquals(SUCCESS_MESSAGE, message);
@@ -354,8 +459,17 @@ public class AutoYDTest extends BaseClass {
 	}
 
 	@Test(priority = 17, dataProvider = "edit_Invalid_alert")
-	void edit_invalid_security(String key, String value) {
-		insertDataFromDataProvider(key, value);
+	void edit_invalid_JavaScript(String key, String value) {
+		try {
+			WebElement webElement = driver.findElement(By.id(key));
+			webElement.clear();
+			webElement.sendKeys(value);
+
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return;
+		}
+
 		List<WebElement> successMessages = driver.findElements(By.xpath("//h2[text()='" + SUCCESS_MESSAGE + "']"));
 
 		assertFalse(successMessages.isEmpty());

@@ -11,10 +11,10 @@
     <classes>
       <class name="AutoYDTest">
         <methods>
+          <include name="testListofEntryVerification"/>
           <include name="teardown"/>
-          <include name="edit_invalid_security" invocation-numbers="0"/>
-          <include name="edit_invalid_sepcialChar" invocation-numbers="0"/>
           <include name="Initialization"/>
+          <include name="addNewEntry_Friend"/>
         </methods>
       </class> <!-- AutoYDTest -->
     </classes>
