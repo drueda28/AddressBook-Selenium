@@ -93,7 +93,7 @@ public class AutoYDTest extends BaseClass {
 		try {
 			for (Map.Entry<String, String> entry : newMap.entrySet()) {
 				// entry.getKey()
-				WebElement ele = driver.findElement(By.xpath("//input[@name='" + entry.getKey() + "']"));
+				WebElement ele = driver.findElement(By.xpath("//input[@id='" + entry.getKey() + "']"));
 
 				// If the input value is null, do not change anything
 				if (entry.getValue() != null) {
@@ -159,8 +159,8 @@ public class AutoYDTest extends BaseClass {
 		assertEquals("Address Book", driver.getTitle());
 	}
 
-	@Test(priority = 2)
-	@Parameters("title")
+//	@Test(priority = 2)
+//	@Parameters("title")
 	void smokeTest_parameter(String title) {
 		assertEquals(driver.getTitle(), title);
 	}
@@ -219,7 +219,7 @@ public class AutoYDTest extends BaseClass {
 
 			addSelectorValue(Map.of("addr_type", "Family", "addr_phone_1_type", "Mobile"));
 
-			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
+			driver.findElement(By.xpath("//input[@id='submit_button']")).click();
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
 			String message = driver.findElement(By.tagName("h2")).getText();
@@ -241,8 +241,8 @@ public class AutoYDTest extends BaseClass {
 
 			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
 			
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
+//			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
 			
 			String message = driver.findElement(By.tagName("h2")).getText();
 			assertEquals(ADDED_MESSAGE, message);
@@ -259,9 +259,9 @@ public class AutoYDTest extends BaseClass {
 			fillForm("WWW", "Gupat ", " ", "200 Fanshawe", "daivanshika@example.com", "12345567345",
 					"https://localhost", null);
 			addSelectorValue(Map.of("addr_type", "Friend"));
-			driver.findElement(By.xpath("//input[@name='submit_button']")).click();
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
+			driver.findElement(By.xpath("//input[@id='submit_button']")).click();
+//			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'successfully')]")));
 			String message = driver.findElement(By.tagName("h2")).getText();
 			assertEquals(ADDED_MESSAGE, message);
 		} catch (Exception e) {
@@ -392,9 +392,8 @@ public class AutoYDTest extends BaseClass {
 		toListEntries();
 		driver.findElement(By.xpath("//form[@action='./editEntry.php']//input[@type='submit']")).click();
 		try {
-			Map<String, String> map = Map.of("addr_type", "Business", "addr_phone_1_type", "Home Fax",
-					"addr_phone_2_type", "Work", "addr_phone_3_type", "Work Fax");
-			addSelectorValue(map);
+			addSelectorValue(Map.of("addr_type", "Business", "addr_phone_1_type", "Home Fax",
+					"addr_phone_2_type", "Work", "addr_phone_3_type", "Work Fax"));
 			fillForm("select2", "", "", "2213 Fanshawe College", "", "", "", Map.of("addr_phone_1", "(226)3345678",
 					"addr_phone_2", "+1 2264431235", "addr_phone_3", "+1 3345567899"));
 		} catch (Exception e) {

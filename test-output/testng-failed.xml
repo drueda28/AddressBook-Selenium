@@ -12,9 +12,24 @@
       <class name="AutoYDTest">
         <methods>
           <include name="testListofEntryVerification"/>
-          <include name="teardown"/>
+          <include name="edit_valid_address1"/>
+          <include name="addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyTheRestFields"/>
+          <include name="smokeTest_getTitle"/>
           <include name="Initialization"/>
           <include name="addNewEntry_Friend"/>
+          <include name="edit_Return_valid"/>
+          <include name="addNewEntry_valid"/>
+          <include name="edit_clearForm_valid"/>
+          <include name="edit_fields_OnMax"/>
+          <include name="view_valid"/>
+          <include name="edit_invalid_JavaScript"/>
+          <include name="addNewEntry_InvalidTestCases_FillOnlyAddress_EmptyNames"/>
+          <include name="teardown"/>
+          <include name="edit_invalid_sepcialChar"/>
+          <include name="addNewEntry_Family"/>
+          <include name="smokeTest_parameter"/>
+          <include name="addNewEntry_Business"/>
+          <include name="edit_select_valid"/>
         </methods>
       </class> <!-- AutoYDTest -->
     </classes>
