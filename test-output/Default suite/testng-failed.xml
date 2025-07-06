@@ -5,12 +5,9 @@
     <classes>
       <class name="AutoYDTest">
         <methods>
-          <include name="clickFirstViewDetail"/>
-          <include name="smokeTest_getTitle"/>
-          <include name="valid_edit"/>
-          <include name="setUpBeforeClass"/>
-          <include name="edit_clearForm_valid"/>
-          <include name="edit_countryOnMax"/>
+          <include name="teardown"/>
+          <include name="Initialization"/>
+          <include name="addNewEntry_Family"/>
         </methods>
       </class> <!-- AutoYDTest -->
     </classes>

@@ -2,14 +2,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AotuoYDTestSuite(failed)">
+    <parameter name="screenShotFolder" value="Screenshots"/>
+    <parameter name="baseURL" value="http:localhost/addressbook/index.php"/>
+    <parameter name="driverFolder" value="\\Driver\\chromedriver.exe"/>
     <parameter name="addr1" value="1011 Fanshawe College"/>
     <parameter name="businessname" value="Fansahwe College London Ontario"/>
     <parameter name="title" value="Address Book"/>
     <classes>
       <class name="AutoYDTest">
         <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="edit_fields_OnMax"/>
+          <include name="teardown"/>
+          <include name="edit_valid_address1" invocation-numbers="0"/>
+          <include name="Initialization"/>
         </methods>
       </class> <!-- AutoYDTest -->
     </classes>
